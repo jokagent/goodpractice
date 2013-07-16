@@ -38,7 +38,7 @@ class CI_Email {
 	var	$smtp_timeout	= 5;		// SMTP Timeout in seconds
 	var	$smtp_crypto	= "";		// SMTP Encryption. Can be null, tls or ssl.
 	var	$wordwrap		= TRUE;		// TRUE/FALSE  Turns word-wrap on/off
-	var	$wrapchars		= "76";		// Number of characters to wrap at.
+	var	$wrapchars		= "150";		// Number of characters to wrap at.
 	var	$mailtype		= "text";	// text/html  Defines email formatting
 	var	$charset		= "utf-8";	// Default char set: iso-8859-1 or us-ascii
 	var	$multipart		= "mixed";	// "mixed" (in the body) or "related" (separate)
@@ -822,7 +822,7 @@ class CI_Email {
 	{
 		if ($this->alt_message != "")
 		{
-			return $this->word_wrap($this->alt_message, '76');
+			return $this->word_wrap($this->alt_message, '150');
 		}
 
 		if (preg_match('/\<body.*?\>(.*)\<\/body\>/si', $this->_body, $match))
@@ -850,7 +850,7 @@ class CI_Email {
 			$body = str_replace($n, "\n\n", $body);
 		}
 
-		return $this->word_wrap($body, '76');
+		return $this->word_wrap($body, '150');
 	}
 
 	// --------------------------------------------------------------------
@@ -868,7 +868,7 @@ class CI_Email {
 		// Se the character limit
 		if ($charlim == '')
 		{
-			$charlim = ($this->wrapchars == "") ? "76" : $this->wrapchars;
+			$charlim = ($this->wrapchars == "") ? "150" : $this->wrapchars;
 		}
 
 		// Reduce multiple spaces
@@ -1200,9 +1200,9 @@ class CI_Email {
 		// Set the character limit
 		// Don't allow over 76, as that will make servers and MUAs barf
 		// all over quoted-printable data
-		if ($charlim == '' OR $charlim > '76')
+		if ($charlim == '' OR $charlim > '1501')
 		{
-			$charlim = '76';
+			$charlim = '150';
 		}
 
 		// Reduce multiple spaces
@@ -1294,7 +1294,7 @@ class CI_Email {
 
 		// Line length must not exceed 76 characters, so we adjust for
 		// a space, 7 extra characters =??Q??=, and the charset that we will add to each line
-		$limit = 75 - 7 - strlen($this->charset);
+		$limit = 150 - 7 - strlen($this->charset);
 
 		// these special characters must be converted too
 		$convert = array('_', '=', '?');
