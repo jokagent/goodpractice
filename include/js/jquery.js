@@ -25,7 +25,7 @@
           return false;
        }
          // setTimeout(function(){centerBox();}, 10000);
-         $('.posts').click(function(e){
+         $('.blog_entry').click(function(e){
           e.preventDefault();
         $('body').append('<div id="blackout"></div>');
         // $(window).resize(centerBox);

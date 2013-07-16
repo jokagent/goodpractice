@@ -40,12 +40,12 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
+		$this->load->view('main/popup.html');
 	}
 	public function index(){
 		$this->site();
 	}
-	public function egor()
-	{
+	public function egor(){
 		//$data = array('name'=>'Egor');
 		$this->load->view('main/htmlheader.html');
 
@@ -98,7 +98,18 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
 	}
-
+	public function up_sales(){
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center');
+		$this->load->view('main/consulting.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
 }
 
 /* End of file welcome.php */
