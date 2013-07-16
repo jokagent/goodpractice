@@ -1,0 +1,46 @@
+  <div class="entreg" id="popup_reg">
+        <div class="entreg_img">
+            <div class="logo"></div>
+            <div class="telka"></div>
+        </div>
+        <div class="entreg_form" id="reg">
+            <div>
+                <h3>Увеличим ваши продажи!</h3>
+                На сайте Вы узнаете более 1000 способов по увеличению продаж.<br>
+                <br>
+                
+            </div>
+            <div id="registr_form">
+                Чтобы получить доступ, зарегистрируйтесь!
+                <h3>Регистрация</h3>
+                <form action="http://goodcrm.ru/crm/insertSegment" id="registr" method="POST">
+                    <input type="text" name="name" id="reg_name" placeholder="Ваше имя" class="reg_data">
+                    <input type="text" name="email" id="reg_email" placeholder="Ваш e-mail" class="reg_data">
+                    <input type="text" name="phone" id="reg_phone" placeholder="Ваш телефон" class="reg_data">
+                    <input type="button" id="get_access" class="entreg_submit"value="Получить доступ!">
+                </form>
+            </div>
+            <div id="thanks" class="hidden">Благодарим за регистрацию! На вашу почту высланы данные для входа на сайт!</div>
+
+            <div class="poplink" id='log_link'> Вход для зарегистрированных пользователей&rarr;</div>
+        </div>
+
+
+        <div class="entreg_form hidden" id="log">
+            <div>
+                <h3>Увеличим ваши продажи!</h3>
+                На сайте Вы узнаете более 1000 способов по увеличению продаж.<br>
+                <br>
+                Чтобы получить доступ, зарегистрируйтесь!
+            </div>
+            <div>
+                <h3>Вход</h3>
+                <form action="http://goodcrm.ru/crm/insertSegment" id="enter" method="POST">
+                    <input type="text" name="email" id="enter_email" placeholder="Ваш e-mail" class="reg_data">
+                    <input type="password" name="password" id="password" class="reg_data" placeholder="Ваш пароль">
+                    <input type="button" id="enter_submit" class="entreg_submit" value="Войти">
+                </form>
+            </div>
+            <div class="poplink" id='reg_link'>Регистрация&rarr;</div>
+        </div>
+        </div>

@@ -1,0 +1,15 @@
+<?=$message?>
+<div class="edit_form">
+	<div class="form_title">Редактировать пост!</div>
+	<form action="<?=$URL?>" id="add_blog" method='POST'>
+		<div>Название статьи</div>
+		<div><input type="text" name="title" value="<?=$post[0]['title']?>"></div>
+		<div><input type="hidden" name="id" value="<?=$post[0]['id']?>"></div>
+		<div>Описание статьи(не больше 255 симв.)</div>
+		<div><textarea rows="5" cols="45" name="description"  ><?=$post[0]['description']?></textarea></div>
+		<div>Текст статьи</div>
+		<div><textarea rows="10" cols="45" name="text" ><?=$post[0]['text']?></textarea></div>
+		<div><input type="submit" value="Сохранить"></div>
+
+	</form>
+</div>

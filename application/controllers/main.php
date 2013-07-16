@@ -98,12 +98,13 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
 	}
-	public function up_sales(){
+	public function consulting(){
+		$data['trigger'] = 0;
 		$this->load->view('main/htmlheader.html');
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
-		$this->load->view('main/center');
+		$this->load->view('main/center', $data);
 		$this->load->view('main/consulting.html');
 		$this->load->view('main/sidebar-right');
 		$this->load->view('main/footer-menu');
