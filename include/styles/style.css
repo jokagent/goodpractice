@@ -1,0 +1,814 @@
+/*
+Theme Name: GoodPractice
+Theme URI: http://goodpractice.ru
+Description: Тема для сайта goodpractice
+Author: Егор Косолапов
+Author URI: http://goodpractice.ru
+Template:
+Version: 0.0.1
+.
+
+.
+*/
+body,html {
+    width:100%;
+    height:100%;
+    font-family: Arial;
+    margin:0;
+    /*overflow: overlay; */
+  
+}
+
+#dynamic_header {
+    z-index: 10;
+    height: 90px;
+    position: absolute;
+    top:0;
+    background-color: #fff;
+    width: 100%;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.8); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.8); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.8); /* Параметры тени */
+    
+    
+}
+#soc_icons {
+    position: absolute;
+    top:12px;
+    right:400px;
+}
+#header_background {
+    background-image: url('../images/sky.png');
+    width: 100%;
+    height: 510px;
+    position: absolute;
+    top:40px;
+}
+#wrapper {
+    z-index: 5;
+    width: 980px;
+    margin: 110px auto 0 auto;
+    position: relative;
+    padding-right: 20px;
+    
+}
+#top {
+    width: 1000px;
+    position: relative;
+    margin:5px auto 10px auto;
+    padding-top:7px;
+    
+}
+#logo {
+    background-image: url('../images/logo.png');
+    width: 258px;
+    height: 41px;
+/*    display: inline-block;*/
+    margin-bottom: 10px;
+    /*margin-top:20px;*/
+}
+#logoimg {
+/*    margin-left: 20px;*/
+}
+#entreg {
+    font-size: 13px;
+    width: 250px;
+    margin-bottom: 20px;
+    display: inline;
+    
+    
+}
+#enter, #regist {
+    display: inline-block;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#contacts {
+    text-align: right;
+    width: 250px;
+    position: absolute;
+    top:10px;
+    right: 20px;
+}
+#contacts a {
+    color:#FF810A;
+    text-decoration: none;
+}
+#menu {
+    position: absolute;
+    top:60px;
+    right: 20px;
+}
+.menu_button {
+    display: inline-block;
+    color:#0C6DCE;
+    margin-left: 30px;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+.menu_button a {
+  text-decoration: none;
+  color: #0C6DCE;
+}
+#afterhead {
+    /*height: 340px;*/
+    /*margin-top: 60px;*/
+    margin-bottom: 30px;
+     
+}
+ 
+#logoimg {
+    display: inline-block;
+    width:568px;
+    height: 418px;
+    background-image: url('../images/crm_logo.png')
+}
+
+#logoimg img{
+    display: block;
+}
+
+#afterhead_info {
+    width: 400px;
+    float: right;
+    font-size: 16px;
+    color:black;
+    /*margin-right: 30px;*/
+}
+h2 {
+    letter-spacing: 1px;
+    font-size: 36px;
+    color:black;
+    font-family: Verdana;
+}
+
+.button {
+    width:180px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #FF810A;
+    color:black;
+    margin: 20px 0;
+    /*border-radius: 10px;*/
+    cursor: pointer;
+    font-size: 20px;
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
+#content {
+    margin-top: 50px;
+    
+}
+
+#leftbar {
+     width: 190px;
+     display: inline-block;
+     border: 1px solid #D67E2A;
+     background-color: #FAF5DF;
+     /*padding-left: 10px;*/
+     padding-top: 10px;
+
+}
+
+
+#books {
+      display:block;
+     margin-left: 15px;
+     margin-top: 15px;
+}
+
+#center {
+   width:480px;
+   display: inline-block;
+   vertical-align: top;
+   padding:0 20px;
+   /*height:1520px;*/
+     
+ }
+ 
+ 
+ 
+ #center_title{
+     margin-bottom: 20px;
+     font-weight: bold;
+     color:red;
+     
+ }
+ .center_article{
+     cursor: pointer;
+     margin:10px 0;
+ }
+ .article_title {
+     font-size: 16px;
+     font-weight: bold;
+ }
+ .article_description {
+     font-size: 14px;
+     color:#929292;
+ }
+ 
+ .content_video{
+     margin: 20px auto;
+     
+ }
+ .content_video_name {
+     margin-bottom: 20px;
+     
+     font-size: 22px;
+     font-weight: bold;
+ }
+/* #video_iframe {
+     margin-left: 5px;
+ }*/
+    
+ #rightbar {
+   width: 260px;
+   display: inline-block;
+   vertical-align: top;
+  
+ }
+ 
+ #look_video {
+     background-image: url('../images/girl1.png');
+     height: 312px;
+ }
+#news {
+  background-color: #9ACDFF;
+  padding:5px;
+  width:250px;
+  margin:0 0 10px 0;
+  
+}
+#news_title {
+     font-size:18px;
+      border-bottom: 1px solid #fff;
+      padding: 10px;
+}
+.news_tag {
+     padding: 10px;
+}
+.news_add_date {
+      color:#fff;
+}
+#countdown {
+    width:255px;
+    background-color: #E7E7E7;
+    border: 2px solid black;
+    margin-bottom:10px;
+    
+}
+
+#countdown_title {
+    padding-top: 35px;
+    padding-left: 10px;
+    color: #FF810A;
+    width: 115px;
+    font-weight: bold;
+}
+#countdown_button {
+    width:160px;
+    height: 30px;
+    background-color: #FF810A;
+    text-align: center;
+    line-height: 30px;
+    margin:155px auto 0 auto;
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Параметры тени */
+}        
+#countimg {
+    height: 95px;
+    /*background-color: #333333;*/
+    width:255px;
+    background-image: url('../images/count.png');
+    background-size: 100% 100%;
+}
+
+#countimg img {
+    display: block;
+    margin:0 auto;
+}
+
+#vk{
+     width:260px;
+     /*margin-left: 15px;*/
+}
+
+#facebook {
+     width:260px;
+     /*margin-left:15px;*/ 
+     margin-top: 20px;
+}
+
+#icons {
+    width:210px;
+    margin:10px auto;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-image: url("images/icons.png");
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+
+}
+
+.icon-face {
+    width:49px;
+    height: 49px;
+    background-position: -78px -12px;
+}
+
+.icon-vk {
+    width:49px;
+    height: 49px;
+    background-position: -78px -240px;
+}
+
+.icon-twit {
+    width:49px;
+    height: 49px;
+    background-position: -21px -240px;
+}
+
+.icon-you {
+    width:49px;
+    height: 49px;
+    background-position: -78px -298px;
+}
+
+.social_like_div {
+    display: inline-block;
+}
+
+#social_like {
+    height: 50px;
+    
+    padding:20px;
+    border:1px solid #cdcdcd;
+    margin-bottom: 20px;
+}
+
+#social_like_title {
+    color:#22224E;
+    font-size: 14px;
+    margin-bottom: 15px;
+    
+}
+
+#footer {
+    height: 65px;
+    background-color: #9ACDFF;
+
+}
+
+#footer_info {
+    width:1000px;
+    color:white;
+    font-size: 14px;
+    margin: 0 auto;
+    padding:20px 0 0 0;
+    position: relative;
+    
+    
+}
+
+#footer_info a {
+    color:white;
+}
+
+#books_imgs {
+    width:100px;
+    margin:10px 20px;
+}
+#books_imgs img {
+  margin-bottom: 15px;
+}
+#form {
+    padding: 5px 15px 15px 15px;
+    border-bottom: 1px solid #D67E2A;
+    
+}
+
+#form_title {
+    display: table-cell;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.input_title {
+    font-size: 13px;
+    color:#5E5E5E;
+}
+
+#formform {
+    margin-top:10px; 
+}
+
+.form_input {
+    background-color: white;
+    border-radius: none;
+    border:1px solid #D67E2A;
+    width:160px;
+    margin:5px 0;
+}
+
+#submit {
+    font-weight: bold;
+    font-size: 15px;
+    border:0;
+    border-radius: none;
+    margin:10px 0;
+    padding:8px 5px;
+    background-color: #FF810A;
+    width:160px;
+  /*  background: #fefcea; /* Для старых браузров 
+    background: -moz-linear-gradient(top, #FFFE00, #FF7D02); /* Firefox 3.6+ */
+    /* Chrome 1-9, Safari 4-5 */
+    /*background: -webkit-gradient(linear, left top, left bottom, */
+                /*color-stop(0%,#FFFE00), color-stop(100%,#FF7D02));*/
+     /*Chrome 10+, Safari 5.1+ */
+    /*background: -webkit-linear-gradient(top, #FFFE00, #FF7D02);*/
+    /*background: -o-linear-gradient(top, #FFFE00, #FF7D02); /* Opera 11.10+ */
+    /*background: -ms-linear-gradient(top, #FFFE00, #FF7D02); /* IE10 */
+    /*background: linear-gradient(top, #FFFE00, #FF7D02); /* CSS3 */ 
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 4px 3px rgba(0,0,0,0.3); /* Параметры тени */
+}
+
+.bottom_info {
+    font-size: 12px;
+    margin:10px auto;
+    color:#5E5E5E;
+    
+}
+
+#bonus {
+    color: #FF810A;
+    font-size: 18px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+#footer_menu {
+    position: relative;
+    border-top: 1px solid #cdcdcd;
+    padding:10px;
+    margin-top:120px;
+}
+
+#bottom_menu {
+    float:right;
+    margin-top: 3px;
+    margin-right: -8px;
+}
+
+#footer_contacts {
+    float:right;
+    font-size:20px;
+    font-weight: bold;
+    color:black;
+}
+
+#social_like2 {
+    height: 50px;
+    
+    padding:20px;
+    border:1px solid #cdcdcd;
+    margin: 0 0 35px 0;
+    position: absolute;
+    bottom: 30px;
+    /*width:450px;*/
+    left:215px;
+    width:458px;
+
+}
+/*.posts {
+    border-bottom: 1px solid #e7e7e7;
+}*/
+.posts h2{
+    font-size: 16px;
+    color:black;
+    font-weight: none;
+    margin-bottom: 2px;
+
+}
+
+.posts a {
+    color:black;
+    text-decoration: none;
+
+    
+}
+
+.posts p{
+    color:#929292;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+/*popup menu*/
+.vert-nav, .vert-nav ul {
+  list-style:none;
+  margin:0 0 0 -1px; /* Чтобы в IE8 не косило. */
+  padding:0;
+}
+/* Делаем LI инлайновым: */
+.vert-nav li {
+  float:left;
+  position:relative;
+  display:block;
+  margin:0 1px;
+  z-index:999;
+  width:150px;
+  background:white;
+  text-align: center;
+  /*margin-bottom: 10px;*/
+
+
+ 
+}
+ /* Меню: */
+.vert-nav li a {
+  display:block;
+  padding:8px 5px 0 5px;
+  height:23px;
+  text-decoration:none;
+  text-align:center;
+  color:#0C6DCE;
+  
+}
+/* Выделенный пункт меню: */
+.vert-nav li.current {
+  background:#C5D4EA;
+}
+/* Пункт меню при наведении курсора: */
+.vert-nav li a:hover {
+  text-decoration:underline;
+}
+ /* Подменю, скрываемое по умолчанию: */
+.vert-nav ul {
+  position:absolute;
+  display:none;
+  left:0;
+}
+.vert-nav ul li {
+  border-top:1px solid #fff;
+  float:left;
+  font-size: 14px;
+
+}
+
+#logo a {
+    display: block;
+    width:258px;
+    height: 41px;
+}
+.children {
+    display: table;
+    margin: 0 auto;
+}
+
+.children ul {
+  padding: 0;
+}
+.children ul li {
+  
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  font-size:14px; 
+
+
+  
+}
+.children ul li a{
+  color: #0C6DCE;
+  text-decoration: none;
+}
+
+#soc_icons_foot {
+    position: absolute;
+    top:10px;
+}
+
+#red_button a {
+  color:red;
+}
+
+.buy_post {
+  border:1px solid #cdcdcd;
+  padding: 20px;
+  margin-bottom:20px;
+}
+.left_float {
+	float:left; 
+	margin-right:20px;
+}
+
+.buy_button {
+  width:160px;
+  height:40px;
+  line-height: 40px;
+  text-align:center;
+  border:1px solid #e7e7e7;
+  background-color: #E40000;
+  cursor:pointer;
+  color:white;
+  font-weight: bold;
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.buy_button:active {
+    background-color: #B20000;
+}
+
+.detail_button {
+  width:160px;
+  height:40px;
+  line-height: 40px;
+  text-align:center;
+  border:1px solid #e7e7e7;
+  background-color: #FF7D02;
+  cursor:pointer;  
+  font-weight: bold;
+  
+  display: inline-block;
+}
+
+.detail_button:active {
+  background-color: #D16600; 
+}
+
+/*POPUP*/
+
+.entreg {
+  width:720px;
+  background-color: #C8CCCD;
+  font-size: 14px;
+   position: fixed;
+   display: none;
+   z-index: 9999;
+
+}
+
+.logo {
+  width:258px;
+  height:41px;
+  background-image: url('images/logo.png');
+}
+
+.telka {
+  width: 290px;
+  height: 392px;
+  background-image: url('images/girl_crm_3.png');
+}
+.entreg_form {
+  display: inline-block;
+  width: 340px;
+  vertical-align: top;
+  margin-left: 30px;
+
+}
+
+.entreg_img {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 30px;
+
+}
+.reg_data {
+   width: 320px;
+   height: 30px;
+   font-size: 16px;
+   background-color: white;
+   border: 1px solid #e7e7e7;
+   border-radius: none;
+   margin: 5px 0;
+}
+
+#enter, #registr {
+  margin: 5px 0;
+}
+
+.entreg_submit {
+  background-color: #D67E2A;
+  color: white;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px auto;
+  display: block;
+  border: none;
+  cursor: pointer;
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Firefox */
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Параметры тени */
+  min-width: 120px;
+}
+.entreg h3 {
+  font-size: 20px;
+}
+
+.poplink a{
+    text-decoration: none;
+    color: black;
+
+ }
+
+#blackout {
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    z-index: 99;
+    left: 0;
+    display: none;
+}
+
+.hidden {
+    display: none;
+    
+}
+
+.poplink {
+  cursor: pointer;
+}
+#thanks {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.widgettitle {
+  font-size: 16px;
+}
+
+.widget {
+  list-style-type: none;
+  font-size: 14px;
+}
+
+.textwidget input:not([type='checkbox']) {
+  display: block;
+}
+
+.textwidget .button {
+    width:140px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #FF810A;
+    color:black;
+    margin: 20px 0;
+    /*border-radius: 10px;*/
+    cursor: pointer;
+    font-size: 16px;
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
+.textwidget input[type='text'], .textwidget input[type='password'] {
+   background-color: white;
+    border: 1px solid #D67E2A;
+    margin: 5px 0;
+    width: 160px;
+    border-radius: none; 
+}
+
+.blog_entry {
+   font-size: 14px;
+   color:#8A8A8A;
+   margin-bottom: 10px;
+}
+
+.blog_entry a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color:black;
+}
+
+.add_form {
+  border: 1px solid #e7e7e7;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.form_title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 5px;
+}

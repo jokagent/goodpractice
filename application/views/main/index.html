@@ -1,0 +1,258 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+    </head>
+    <body>
+        <!-- liike vk-->
+        
+                <script type="text/javascript">
+                  VK.init({apiId: 3688210, onlyWidgets: true});
+                </script>
+        <!-- liike vk end-->
+        <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=384403321677819";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+        <div id="dynamic_header">
+            
+            <div id="top">
+                <div id="logo"></div>
+                <div id="entreg">
+                    <div id="enter">Войти &rarr; </div>
+                    <div id="regist">Регистрация</div>
+                    
+                </div>
+                <div id="contacts">
+                    (8352) 294-224<br>
+                    <a href="mailto:info@goodpratice.ru">info@goodpractice.ru</a>
+                </div>
+                <div id="soc_icons">
+                    <img src="images/soc_icons.png" usemap="#map">
+                    <map name="map"> 
+                        <area shape="rect" alt="facebook" 
+                        coords="0,0,30,27" 
+                        href="http://facebook.com/goodpract" target="_blank">
+                        <area shape="rect" alt="vk" 
+                        coords="32,0,60,27" 
+                        href="http://vk.com/goodpractice_crm" target="_blank">
+                        <area shape="rect" alt="youtube" 
+                        coords="64,0,93,27" 
+                        href="http://youtube.com" target="_blank">
+                        <area shape="rect" alt="twitter" 
+                        coords="97,0,125,27" 
+                        href="https://twitter.com/verona86_?lang=ru" target="_blank">
+                        <area shape="rect" alt="LinkedIn" 
+                        coords="131,0,162,27" 
+                        href="http://linkedin.com" target="_blank">
+                        <area shape="rect" alt="google+" 
+                        coords="164,0,192,27" 
+                        href="http://google.com" target="_blank">
+                </div>
+                <div id="menu">
+                    <div class="menu_button">УВЕЛИЧИВАЕМ ПРОДАЖИ</div>
+                    <div class="menu_button">ВНЕДРЯЕМ CRM</div>
+                    <div class="menu_button">О НАС</div>
+                </div>
+            
+            </div>
+        </div>
+        <div id="header_background">
+            
+        </div>
+        <div id="wrapper">
+            
+            <div id="afterhead">
+                <div id="logoimg">
+                    
+                <img src="images/crm_logo.png"></div>
+                <div id="afterhead_info">
+                    <h2>Хотите увеличить продажи?</h2>
+                    Начните использовать "Хорошую CRM". Она сделает исстему продаж простой и понятной.
+                    Вы сможете легко и быстро контролировать и увеличивать ваши продажи. <br>
+                    <div class="button">Посмотреть</div>    
+                </div>
+            </div>
+            <div id="content">
+                <div id="leftbar">
+                    <div id="form">
+                        <div id="form_title">Получите БЕСПЛАТНО наши книги по увеличению продаж!</div>
+                        <form action="formdata.php" id="formform">
+                            <div class="input_title">Ваше имя</div>
+                            <input type="text" name="name" class="form_input">
+                            <div class="input_title">Ваш e-mail</div>
+                            <input type="text" name="email" class="form_input">
+                            <input type="submit" value="Получить книги!" id="submit">
+                            <div id="bottom_info">
+                                <img src="images/lock.png">
+                                Файлы архива с книгами будут приходить к Вам на E-mail
+                            </div>   
+                        </form>
+                    </div>
+                    <span id="books">Вы получите наши книги БЕСПЛАТНО по увеличению продаж!</span>
+                    <div id="books_imgs">
+                    <img src="images/book1.png">
+                    <img src="images/book2.png">
+                    <img src="images/book3.png">
+                    <div id="bonus">+ бонус</div>
+                    <img src="images/book4.png">
+                    </div>
+                </div>
+                <div id="center">
+                  
+                    <div id="social_like">
+                        <div id="social_like_title">Нажмите на "социальную кнопку", чтобы поделиться с друзьями!</div>
+                        <div class="social_like_div">
+                        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgoodpract&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=384403321677819" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe>
+                       </div>
+                        <!--vk-->
+                        <div class="social_like_div">
+                        <div id="vk_like"></div>
+                        <script type="text/javascript">
+                        VK.Widgets.Like("vk_like", {type: "button", verb: 1, height: 18});
+                        </script>
+                        </div>
+                        <!--vk-->
+                        <!--tweet-->
+                        <div class="social_like_div">
+                         <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+
+                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>
+                        <!--tweet-->
+                    </div>
+                    <div class="content_video">
+                        <div class="content_video_name">Увеличим ваши продажи!</div>
+                        <div id="video_iframe">
+                            <iframe width="520" height="280" src="http://www.youtube.com/embed/nCcmskf92nM" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div id="center_title">Хорошие инструменты по увеличению продаж</div>
+                    <div class="center_article">
+                        <div class="article_title">4М ПРОДАЖИ</div>
+                        <div class="article_description">Как найти уникальный подход к каждому клиенту.</div>
+                    </div>
+                    <div class="center_article">
+                        <div class="article_title">4М ПРОДАЖИ</div>
+                        <div class="article_description">Как найти уникальный подход к каждому клиенту.</div>
+                    </div>
+                    <div class="center_article">
+                        <div class="article_title">4М ПРОДАЖИ</div>
+                        <div class="article_description">Как найти уникальный подход к каждому клиенту.</div>
+                    </div>
+                    <div class="center_article">
+                        <div class="article_title">4М ПРОДАЖИ</div>
+                        <div class="article_description">Как найти уникальный подход к каждому клиенту.</div>
+                    </div>
+                    <div class="center_article">
+                        <div class="article_title">4М ПРОДАЖИ</div>
+                        <div class="article_description">Как найти уникальный подход к каждому клиенту.</div>
+                    </div>
+                    <div class="center_article">
+                        <div class="article_title">4М ПРОДАЖИ</div>
+                        <div class="article_description">Как найти уникальный подход к каждому клиенту.</div>
+                    </div>
+                    <div class="center_article">
+                        <div class="article_title">4М ПРОДАЖИ</div>
+                        <div class="article_description">Как найти уникальный подход к каждому клиенту.</div>
+                    </div>
+                    <div id="social_like2">
+                        <div id="social_like_title">Нажмите на "социальную кнопку", чтобы поделиться с друзьями!</div>
+                        <div class="social_like_div">
+                        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgoodpract&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=384403321677819" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:125px; height:21px;" allowTransparency="true"></iframe>
+                       </div>
+                        <!--vk-->
+                        <div class="social_like_div">
+                        <div id="vk_like2"></div>
+                        <script type="text/javascript">
+                        VK.Widgets.Like("vk_like2", {type: "button", verb: 1, height: 18});
+                        </script>
+                        </div>
+                        <!--vk-->
+                        <!--tweet-->
+                        <div class="social_like_div">
+                         <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+
+                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>
+                        <!--tweet-->
+                    </div>
+                </div>
+                <div id="rightbar">
+                    <div id="news">
+                        <div id="news_title">Внимание, скоро!</div>
+                        <div class="news_tag">
+                            <div class="news_add_date">25 января 2013</div>
+                            Конференция. 100 способов увеличения продаж.
+                        </div>
+                        <div class="news_tag">
+                            <div class="news_add_date">30 мая 2013</div>
+                            Семинар. 20 стратегий по увеличению продаж.
+                        </div>
+                        <div class="news_tag">
+                            <div class="news_add_date">14 июня 2013</div>
+                            Семинар. 20 стратегий по увеличению продаж.
+                        </div>
+                    </div>
+                    <div id="countdown">
+                        
+                        <div id="look_video">
+                           <div id="countdown_title">Узнай 20 стратегий по величению продаж!</div> 
+                           <div id="countdown_button">Я хочу узнать!</div>
+                        </div>
+                        
+                        <div id="countimg"><img src="images/count.png"></div>
+                    </div>
+                    <div id="vk">
+                        
+                    <!--     <script type="text/javascript" src="//vk.com/js/api/openapi.js?96"></script>-->
+
+                        <!-- VK Widget -->
+                        <div id="vk_groups"></div>
+                        <script type="text/javascript">
+                        VK.Widgets.Group("vk_groups", {mode: 0, width: "260", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 54043369);
+                        </script>
+                        
+                    </div>
+                    <div id="facebook">
+                      <div class="fb-like-box" data-href="https://www.facebook.com/goodpract" data-width="258" data-height="390" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
+                       </div>
+                    </div>
+                </div>
+            <div id="footer_menu">
+               <div id="entreg">
+                    <div id="enter">Войти &rarr; </div>
+                    <div id="regist">Регистрация</div>
+                    
+                </div>
+                <div id="bottom_menu">
+                    <div class="menu_button">УВЕЛИЧИВАЕМ ПРОДАЖИ</div>
+                    <div class="menu_button">ВНЕДРЯЕМ CRM</div>
+                    <div class="menu_button">О НАС</div>
+                </div>
+            </div>
+            </div>
+                
+            <div id="footer">
+                <div id="footer_info">
+                    <div id="footer_contacts">(8352) 294-224 info@goodpractice.ru</div>
+                    
+                    © "Хорошая практика", 2013 г. Все права защищены. <br>
+                    Ознакомьтесь с <a href="">условиями использования</a> и <a href="">политикой конфиденциальности</a>.
+                </div>
+            </div>
+        
+    </body>
+</html>
