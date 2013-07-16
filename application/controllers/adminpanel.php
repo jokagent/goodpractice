@@ -57,10 +57,24 @@ class Adminpanel extends CI_Controller {
 		$message = $this->records->insBlogEntry(array('title'=>$title,'description'=>$description,'text'=>$text));
 		$this->site('', $message);
 	}
+	public function changeBlogEntry(){
+		$id = $this->input->post('id');
+		$title = $this->input->post('title');
+		$description = $this->input->post('description');
+		$text = $this->input->post('text');
+		$message = $this->records->editBlogEntry($id, array('title'=>$title,'description'=>$description,'text'=>$text));
+		$this->site('', $message);
+	}
 	public function addProductEntry(){
 		$title = $this->input->post('title');
 		$text = $this->input->post('text');
 		$message = $this->records->insBuyEntry(array('title'=>$title,'text'=>$text));
+		$this->site('', $message);
+	}
+	public function changeShopEntry(){
+		$title = $this->input->post('title');
+		$text = $this->input->post('text');$id = $this->input->post('id');
+		$message = $this->records->editShopEntry($id, array('title'=>$title,'text'=>$text));
 		$this->site('', $message);
 	}
 
@@ -89,7 +103,7 @@ class Adminpanel extends CI_Controller {
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
 		$data['message'] = $message;
-		$data['URL']= '/adminpanel/editBlogEntry/';
+		$data['URL']= '/adminpanel/editProductEntry/';
 		$this->load->view('main/htmlheader.html');
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -103,6 +117,49 @@ class Adminpanel extends CI_Controller {
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
 	}
+
+	public function editBlogEntry($id){
+		$data['records'] = $this->records->all_blogs();
+		$data['buy'] = $this->records->all_products();
+		$data['trigger'] = 0;
+		$data['message'] = 'fuck all of you';
+		$data['post'] = $this->records->getBlogInfoBy($id);
+		$data['URL']= '/adminpanel/changeBlogEntry';
+		
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		// $this->load->view('main/buy');
+		$this->load->view('main/editPosts.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
+
+	public function editProductEntry($id) {
+		 $data['records'] = $this->records->all_blogs();
+		$data['buy'] = $this->records->all_products();
+		$data['trigger'] = 0;
+		$data['message'] = 'fuck all of you';
+		$data['post'] = $this->records->getProductInfoBy($id);
+		$data['URL']= '/adminpanel/changeShopEntry';
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		// $this->load->view('main/buy');
+		$this->load->view('main/editProducts.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
+
+	
 }
 
 /* End of file welcome.php */

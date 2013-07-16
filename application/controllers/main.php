@@ -29,7 +29,7 @@ class Main extends CI_Controller {
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = ($name=='buy') ? 0 : 1;
-		$data['URL']= '/main/viewBlogEntry/';
+		$data['URL']= ($name=='blog') ? '/main/viewBlogEntry/' : '/main/viewProductEntry/';
 		$this->load->view('main/htmlheader.html');
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -59,6 +59,46 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer'/*, $data*/);
 		$this->load->view('main/htmlfooter.html');
 	}
+
+	public function viewBlogEntry($id) {
+		$data['records'] = $this->records->all_blogs();
+		$data['buy'] = $this->records->all_products();
+		$data['trigger'] = 0;
+		$data['message'] = 'fuck all of you';
+		$data['post'] = $this->records->getBlogInfoBy($id);
+		$data['URL']= '/main/viewBlogEntry';
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		// $this->load->view('main/buy');
+		$this->load->view('main/viewBlog.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
+		public function viewProductEntry($id) {
+		$data['records'] = $this->records->all_blogs();
+		$data['buy'] = $this->records->all_products();
+		$data['trigger'] = 0;
+		$data['message'] = 'fuck all of you';
+		$data['post'] = $this->records->getProductInfoBy($id);
+		$data['URL']= '/main/viewProductEntry';
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		// $this->load->view('main/buy');
+		$this->load->view('main/viewProduct.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
+
 }
 
 /* End of file welcome.php */
