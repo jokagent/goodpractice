@@ -17,7 +17,7 @@ class Auth extends CI_Controller {
         function registr(){
                 if ($this->ion_auth->logged_in())
 		{
-			redirect('/crm/', 'refresh');
+			redirect('/main/', 'refresh');
 		}
                
                 
@@ -74,10 +74,10 @@ class Auth extends CI_Controller {
 	{
 		if (!$this->ion_auth->logged_in())
 		{
-			redirect('/crm/hello', 'refresh');
+			redirect('/main', 'refresh');
 		}
 		else{
-			redirect('/', 'refresh');
+			redirect('/auth', 'refresh');
 		}
                        
 
@@ -114,7 +114,7 @@ class Auth extends CI_Controller {
 	{
         if ($this->ion_auth->logged_in())
         {
-            redirect('/auth/', 'refresh');
+            redirect('/main/', 'refresh');
         }
 		//$this->data['title'] = "Login";
 
@@ -178,7 +178,7 @@ class Auth extends CI_Controller {
 //            $this->load->view('auth/htmlheader.html');
 //            $this->_render_page('auth/login',$this->data);
 //            $this->load->view('auth/htmlfooter.html');
-            echo $this->data;
+            print_r($this->data);
             echo "Ошибка при валидации данных";
 
 

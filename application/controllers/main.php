@@ -22,10 +22,27 @@ class Main extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('records');
+        $this->load->library('session');
+        $this->load->library('ion_auth');
     }
+
     //goodpractice.loc/main/index/$name/$address/
 	public function site($name='blog')
 	{
+		if (!$this->ion_auth->logged_in())
+        {
+            redirect('/auth/login', 'refresh');
+        }
+		$this->ion_auth->get_user_info();
+		$info = json_decode($this->session->userdata('info'));
+        if (!$info)
+        {
+         $this->session->sess_destroy();
+            redirect('/auth/logout', 'refresh');
+        }
+        $data['image']=$info->image_path ? $info->image_path : 'default.png';
+		$data['name']=$info->name.' '.$info->surname;
+		$data['id_registred_company'] = $info->id_registred_company;
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = ($name=='buy') ? 0 : 1;
@@ -43,6 +60,17 @@ class Main extends CI_Controller {
 		$this->load->view('main/popup.html');
 	}
 	public function index(){
+		if (!$this->ion_auth->logged_in())
+        {
+            redirect('/auth/login', 'refresh');
+        }
+		$this->ion_auth->get_user_info();
+		$info = json_decode($this->session->userdata('info'));
+        if (!$info)
+        {
+         $this->session->sess_destroy();
+            redirect('/auth/logout', 'refresh');
+        }
 		$this->site();
 	}
 	public function egor(){
