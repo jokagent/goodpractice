@@ -53,13 +53,13 @@
                         <div class="menu_button popup_reg" id="red_button"><a href="/main/site/buy">КУПИТЬ</a>
                     
                         </div>
-                        <div class="menu_button"><a href="http://orangeriver.ru/up-your-sales/consulting">УВЕЛИЧИВАЕМ ПРОДАЖИ</a>
+                        <div class="menu_button"><a href="/main/consulting">УВЕЛИЧИВАЕМ ПРОДАЖИ</a>
                     
                         </div>
-                        <div class="menu_button"><a href="http://orangeriver.ru/introduce-crm/crm-cloud">ВНЕДРЯЕМ CRM</a>
+                        <div class="menu_button"><a href="/main/crm-cloud">ВНЕДРЯЕМ CRM</a>
                     
                         </div>
-                        <div class="menu_button"><a href="http://orangeriver.ru/about/about-us/">О НАС</a>
+                        <div class="menu_button"><a href="main/about_us/">О НАС</a>
                     
                         </div>
                     

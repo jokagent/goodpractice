@@ -111,6 +111,82 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
 	}
+	public function couching(){
+		$data['trigger'] = 0;
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		$this->load->view('main/couching.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
+	public function trening(){
+		$data['trigger'] = 0;
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		$this->load->view('main/trening.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
+	public function about_us(){
+		$data['trigger'] = 0;
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		$this->load->view('main/about_us.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
+	public function history(){
+		$data['trigger'] = 0;
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		$this->load->view('main/history.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}public function clients(){
+		$data['trigger'] = 0;
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		$this->load->view('main/clients.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}public function contacts(){
+		$data['trigger'] = 0;
+		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center', $data);
+		$this->load->view('main/contacts.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html');
+	}
 }
 
 /* End of file welcome.php */
