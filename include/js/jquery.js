@@ -51,23 +51,46 @@
            if (email && name && phone) {
               $.ajax({
                 type:'POST',
-                url:'http://goodcrm.ru/crm/insertSegment',
+                url:'http://goodcrm.ru/',
+                data:{
+                  'email':email,
+                  'name':name,
+                  'phone':phone
+                },
+                dataType:'json'
+
+              });
+               $.ajax({
+                type:'POST',
+                url:'http://goodpractice/auth/registr',
                 data:{
                   'email':email,
                   'name':name,
                   'phone':phone
                 },
                 dataType:'json',
-                success: function(data){
+                success: function(){
                   $('#registr_form').addClass('hidden');
                   $('#thanks').removeClass('hidden');
                   // location.href='http://orangeriver.ru';
 
                 }
-              });     
+              });
            }
           
       });
+
+       $(document).on('click','#enter_submit',function(){
+           var data = {
+               email :$('#log #enter_email').val(),
+               password : $('#log #password').val()
+           }
+
+
+            $.post('http://goodpractice/auth/login',data,function(data){alert(data)});
+
+       });
+
 
     });
     
