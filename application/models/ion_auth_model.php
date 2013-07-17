@@ -2066,7 +2066,7 @@ class Ion_auth_model extends CI_Model
 		}
 	}
     public function get_user_info($id){
-        $query = $this->db->select($this->identity_column.', id, name, surname, image_path, login, email, id_registred_company')
+        $query = $this->db->select($this->identity_column.', id, name, login, email')
             ->where('id', $id)
             ->limit(1)
             ->get($this->tables['users']);

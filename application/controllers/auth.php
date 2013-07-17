@@ -77,7 +77,7 @@ class Auth extends CI_Controller {
 			redirect('/main', 'refresh');
 		}
 		else{
-			redirect('/auth', 'refresh');
+			redirect('/', 'refresh');
 		}
                        
 
@@ -114,7 +114,7 @@ class Auth extends CI_Controller {
 	{
         if ($this->ion_auth->logged_in())
         {
-            redirect('/main/', 'refresh');
+            redirect('/auth/', 'refresh');
         }
 		//$this->data['title'] = "Login";
 
@@ -135,7 +135,7 @@ class Auth extends CI_Controller {
 				 $this->session->set_flashdata('message', $this->ion_auth->messages());
 
 				//redirect('/', 'refresh');
-                echo "Успешная авторизация успешна";
+                echo json_encode(array('message'=>"Успешная авторизация успешна", 'status'=>true));
 			}
 			else
 			{
@@ -155,8 +155,8 @@ class Auth extends CI_Controller {
 //                                 $this->load->view('auth/htmlheader.html');
 //                                 $this->_render_page('auth/login',$this->data);
 //                                  $this->load->view('auth/htmlfooter.html');\
-                echo $this->data;
-				echo "Ошибка при авторизации"; //use redirects instead of loading views for compatibility with MY_Controller libraries
+                //echo $this->data;
+				echo json_encode(array('message'=>'Ошибка при авторизации', 'status'=>false)); //use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
 		}
 		else
@@ -178,8 +178,8 @@ class Auth extends CI_Controller {
 //            $this->load->view('auth/htmlheader.html');
 //            $this->_render_page('auth/login',$this->data);
 //            $this->load->view('auth/htmlfooter.html');
-            print_r($this->data);
-            echo "Ошибка при валидации данных";
+            //echo $this->data;
+            echo json_encode(array('message'=>'Ошибка при валидации данных', 'status'=>false));
 
 
 
@@ -207,7 +207,7 @@ class Auth extends CI_Controller {
 
 		//redirect them to the login page
 		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('/auth/', 'refresh');
+		redirect('/main/', 'refresh');
 	}
 
 	//change password
