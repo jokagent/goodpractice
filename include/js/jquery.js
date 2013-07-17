@@ -24,14 +24,14 @@
 
           return false;
        }
-         // setTimeout(function(){centerBox();}, 10000);
-         $('.blog_entry').click(function(e){
-          e.preventDefault();
-        $('body').append('<div id="blackout"></div>');
-        // $(window).resize(centerBox);
-        // $(window).scroll(centerBox);
-        centerBox();
-      });
+//         // setTimeout(function(){centerBox();}, 10000);
+//         $('.blog_entry').click(function(e){
+//          e.preventDefault();
+//        $('body').append('<div id="blackout"></div>');
+//        // $(window).resize(centerBox);
+//        // $(window).scroll(centerBox);
+//        centerBox();
+//      });
       
       $('#log_link').click(function(){
           $('#log').removeClass("hidden");

@@ -55,7 +55,11 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
-		$this->load->view('main/popup.html');
+        if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
 	}
 	public function check_login(){
 		if (!$this->ion_auth->logged_in())

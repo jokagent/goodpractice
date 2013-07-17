@@ -44,3 +44,13 @@
             <div class="poplink" id='reg_link'>Регистрация&rarr;</div>
         </div>
         </div>
+          <script>
+              // setTimeout(function(){centerBox();}, 10000);
+                       $('.blog_entry').click(function(e){
+                        e.preventDefault();
+                      $('body').append('<div id="blackout"></div>');
+                      // $(window).resize(centerBox);
+                      // $(window).scroll(centerBox);
+                      centerBox();
+                    });
+              </script>
