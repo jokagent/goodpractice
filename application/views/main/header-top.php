@@ -5,7 +5,7 @@
                   VK.init({apiId: 3716413, onlyWidgets: true});
                 </script>
         <!-- liike vk end-->
-        <div id="fb-root"></div>
+                        <div id="fb-root"></div>
                 <script>(function(d, s, id) {
                   var js, fjs = d.getElementsByTagName(s)[0];
                   if (d.getElementById(id)) return;
@@ -18,9 +18,11 @@
             <div id="top">
                 <div id="logo"><a href="/"></a></div>
                 <div id="entreg">
+                <? if(!$logged){?>
                     <div id="enter">Войти &rarr; </div>
                     <div id="regist">Регистрация</div>
-                    
+
+                <?} else {?> <div><a href="/auth/logout">Выйти</a></div> <?}?>    
                 </div>
                 <div id="soc_icons">
                     <img src="/include/images/soc_icons.png" usemap="#map">
@@ -59,7 +61,7 @@
                         <div class="menu_button"><a href="/main/crm-cloud">ВНЕДРЯЕМ CRM</a>
                     
                         </div>
-                        <div class="menu_button"><a href="main/about_us/">О НАС</a>
+                        <div class="menu_button"><a href="/main/about_us/">О НАС</a>
                     
                         </div>
                     

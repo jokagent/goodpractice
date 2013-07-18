@@ -44,12 +44,13 @@ class Main extends CI_Controller {
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = ($name=='buy') ? 0 : 1;
+		$data['logged'] = $this->check_login();
 		$data['URL']= ($name=='blog') ? '/main/viewBlogEntry/' : '/main/viewProductEntry/';
-		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
-		$this->load->view('main/center', $data);
+		$this->load->view('main/center');
 		$this->load->view('main/'.$name, $data);
 		$this->load->view('main/sidebar-right');
 		$this->load->view('main/footer-menu');
@@ -62,7 +63,7 @@ class Main extends CI_Controller {
 
 	}
 	public function check_login(){
-		if (!$this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in())
         {
             return true;
         } else return false;
@@ -99,8 +100,9 @@ class Main extends CI_Controller {
 		$data['trigger'] = 0;
 		$data['message'] = 'fuck all of you';
 		$data['post'] = $this->records->getBlogInfoBy($id);
+		$data['logged'] = $this->check_login();
 		$data['URL']= '/main/viewBlogEntry';
-		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -119,8 +121,9 @@ class Main extends CI_Controller {
 		$data['trigger'] = 0;
 		$data['message'] = 'fuck all of you';
 		$data['post'] = $this->records->getProductInfoBy($id);
+		$data['logged'] = $this->check_login();
 		$data['URL']= '/main/viewProductEntry';
-		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -134,7 +137,8 @@ class Main extends CI_Controller {
 	}
 	public function consulting(){
 		$data['trigger'] = 0;
-		$this->load->view('main/htmlheader.html');
+		$data['logged'] = $this->check_login();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -147,7 +151,8 @@ class Main extends CI_Controller {
 	}
 	public function couching(){
 		$data['trigger'] = 0;
-		$this->load->view('main/htmlheader.html');
+		$data['logged'] = $this->check_login();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -160,7 +165,8 @@ class Main extends CI_Controller {
 	}
 	public function trening(){
 		$data['trigger'] = 0;
-		$this->load->view('main/htmlheader.html');
+		$data['logged'] = $this->check_login();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -173,7 +179,8 @@ class Main extends CI_Controller {
 	}
 	public function about_us(){
 		$data['trigger'] = 0;
-		$this->load->view('main/htmlheader.html');
+		$data['logged'] = $this->check_login();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -186,7 +193,8 @@ class Main extends CI_Controller {
 	}
 	public function history(){
 		$data['trigger'] = 0;
-		$this->load->view('main/htmlheader.html');
+		$data['logged'] = $this->check_login();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -198,7 +206,8 @@ class Main extends CI_Controller {
 		$this->load->view('main/htmlfooter.html');
 	}public function clients(){
 		$data['trigger'] = 0;
-		$this->load->view('main/htmlheader.html');
+		$data['logged'] = $this->check_login();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -210,7 +219,8 @@ class Main extends CI_Controller {
 		$this->load->view('main/htmlfooter.html');
 	}public function contacts(){
 		$data['trigger'] = 0;
-		$this->load->view('main/htmlheader.html');
+		$data['logged'] = $this->check_login();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');

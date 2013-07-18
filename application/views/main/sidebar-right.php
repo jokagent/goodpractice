@@ -34,8 +34,10 @@
                             </script>
                         
                     </div>
+                        
+
                     <div id="facebook">
-                      <div class="fb-like-box" data-href="https://www.facebook.com/goodpract" data-width="258" data-height="390" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
+                      <div class="fb-like-box" data-href="https://www.facebook.com/goodpract" data-width="260" data-height="420" data-show-faces="true" data-stream="false" data-show-border="true" data-header="false"></div>
                        </div>
                     </div>
 

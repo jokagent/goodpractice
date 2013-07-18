@@ -20,7 +20,7 @@
                     <input type="button" id="get_access" class="entreg_submit"value="Получить доступ!">
                 </form>
             </div>
-            <div id="thanks" class="hidden">Благодарим за регистрацию! На вашу почту высланы данные для входа на сайт!</div>
+            <div id="thanks" class="hidden">Благодарим за регистрацию! Зайдите на вашу почту. Вам высланы данные для входа на сайт и ссылкой для активизации вашего аккаунта!</div>
 
             <div class="poplink" id='log_link'> Вход для зарегистрированных пользователей&rarr;</div>
         </div>
@@ -45,7 +45,7 @@
         </div>
         </div>
           <script>
-<<<<<<< HEAD
+
                  var boxWidth = 720;
        function centerBox() {
           var winWidth = $(window).width();
@@ -59,22 +59,6 @@
 
           return false;
        }
-=======
-
-              var boxWidth = 720;
-              function centerBox() {
-                  var winWidth = $(window).width();
-                  var winHeight = $(document).height();
-                  // var scrollPos = $(document).height()
-                  var disWidth = (winWidth - boxWidth) / 2;
-                  var disHeight = ($(window).height()/2)-230;
-
-                  $('.entreg').css({'left':disWidth+'px', 'top':disHeight+'px'}).show();
-                  $('#blackout').css({'width':winWidth+'px', 'height':winHeight+'px'}).show();
-
-                  return false;
-              }
->>>>>>> 750e25266a3473a68155e46672a4de9348503193
               // setTimeout(function(){centerBox();}, 10000);
                        $('.blog_entry').click(function(e){
                         e.preventDefault();
@@ -83,4 +67,6 @@
                       // $(window).scroll(centerBox);
                       centerBox();
                     });
+
+                     
               </script>
