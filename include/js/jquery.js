@@ -11,19 +11,19 @@
       );
       
 
-       var boxWidth = 720;
-       function centerBox() {
-          var winWidth = $(window).width();
-          var winHeight = $(document).height();
-          // var scrollPos = $(document).height()
-          var disWidth = (winWidth - boxWidth) / 2;
-          var disHeight = ($(window).height()/2)-230;
-
-          $('.entreg').css({'left':disWidth+'px', 'top':disHeight+'px'}).show();
-          $('#blackout').css({'width':winWidth+'px', 'height':winHeight+'px'}).show();
-
-          return false;
-       }
+//       var boxWidth = 720;
+//       function centerBox() {
+//          var winWidth = $(window).width();
+//          var winHeight = $(document).height();
+//          // var scrollPos = $(document).height()
+//          var disWidth = (winWidth - boxWidth) / 2;
+//          var disHeight = ($(window).height()/2)-230;
+//
+//          $('.entreg').css({'left':disWidth+'px', 'top':disHeight+'px'}).show();
+//          $('#blackout').css({'width':winWidth+'px', 'height':winHeight+'px'}).show();
+//
+//          return false;
+//       }
 //         // setTimeout(function(){centerBox();}, 10000);
 //         $('.blog_entry').click(function(e){
 //          e.preventDefault();
