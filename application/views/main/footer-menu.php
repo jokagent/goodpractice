@@ -8,7 +8,7 @@
                         <div class="social_like_div">
                         <div id="vk_like2"></div>
                         <script type="text/javascript">
-                        VK.Widgets.Like("vk_like2", {type: "button", verb: 1, height: 18});
+                        VK.Widgets.Like("vk_like2", {type: "button", verb: 1, height: 20});
                         </script>
                         </div>
                         <!--vk-->
@@ -20,25 +20,26 @@
                         </div>
                         <!--tweet-->
                     </div>
-               <div id="entreg">
+              <div id="entreg">
+                <? if(!$logged){?>
                     <div id="enter">Войти &rarr; </div>
                     <div id="regist">Регистрация</div>
-                    
+
+                <?} else {?> <div id="exit"><a href="/auth/logout">Выйти</a></div> <?}?>    
                 </div>
                 <div id="bottom_menu">
-                    <div class="menu_button" id="red_button"><a href="http://orangeriver.ru/buy/">КУПИТЬ</a>
+                      <div class="menu_button popup_reg" id="red_button"><a href="/main/site/buy">КУПИТЬ</a>
                     
                         </div>
-                     <div class="menu_button"><a href="http://orangeriver.ru/up-your-sales/consulting">УВЕЛИЧИВАЕМ ПРОДАЖИ</a>
+                        <div class="menu_button"><a href="/main/consulting">УВЕЛИЧИВАЕМ ПРОДАЖИ</a>
                     
                         </div>
-                        <div class="menu_button"><a href="http://orangeriver.ru/introduce-crm/crm-cloud">ВНЕДРЯЕМ CRM</a>
+                        <div class="menu_button"><a href="/main/crm-cloud">ВНЕДРЯЕМ CRM</a>
                     
                         </div>
-                        <div class="menu_button"><a href="http://orangeriver.ru/about/about-us/">О НАС</a>
+                        <div class="menu_button"><a href="/main/about_us/">О НАС</a>
                     
-                        </div>
-                    
+                        </div>                    
                 </div>
             </div>
 </div>

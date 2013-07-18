@@ -9,7 +9,7 @@
                         <div class="social_like_div">
                         <div id="vk_like"></div>
                         <script type="text/javascript">
-                        VK.Widgets.Like("vk_like", {type: "button", verb: 1, height: 18});
+                        VK.Widgets.Like("vk_like", {type: "button", verb: 1, height: 20});
                         </script>
                         </div>
                         <!--vk-->
