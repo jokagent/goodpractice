@@ -14,58 +14,60 @@ class Auth extends CI_Controller {
         $this->lang->load('ion_auth','english');
 		$this->db1 = $this->load->database('default', true);
 	}//отключить Notice
-        function registr(){
-                if ($this->ion_auth->logged_in())
-		{
+     function registr(){
+
+         if ($this->ion_auth->logged_in())
+		    {
 			redirect('/main/', 'refresh');
-		}
+		    }
                
                 
-       $this->form_validation->set_rules('name', 'Name', 'required|xss_clean');
-		//$this->form_validation->set_rules('surname','Фамилия' , 'required|xss_clean');
-		//$this->form_validation->set_rules('second_name','Отчество' , 'xss_clean');
-		$this->form_validation->set_rules('email','Email', 'required|valid_email');
-		$this->form_validation->set_rules('phone','Phone', 'required|xss_clean|min_length[3]|max_length[15]');
-		//$this->form_validation->set_rules('phone2', $this->lang->line('create_user_validation_phone2_label'), 'required|xss_clean|min_length[3]|max_length[3]');
-		//$this->form_validation->set_rules('phone3', $this->lang->line('create_user_validation_phone3_label'), 'required|xss_clean|min_length[4]|max_length[4]');
-		//$this->form_validation->set_rules('login','login', 'required|xss_clean');
-		//$this->form_validation->set_rules('password','password', 'required|min_length[' .$this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
-		//$this->form_validation->set_rules('password_confirm', 'password_confirm', 'required');
-               
-                if ($this->form_validation->run() == true)
-		{
-			$name    =  $this->input->post('name');
-			$email    = $this->input->post('email');
-			$password = mb_substr(str_shuffle(uniqid('tmpPaSs')),0,7);
-                        
-			$additional_data = array(
-				'phones'  => $this->mb_ucfirst(mb_strtolower($this->input->post('phone'))),
-                'temp'    => $password
-				//'name'  => $this->mb_ucfirst(mb_strtolower($this->input->post('name')))
-//				'surname'=> $this->mb_ucfirst(mb_strtolower($this->input->post('surname'))),
-//				'second_name'=> $this->mb_ucfirst(mb_strtolower($this->input->post('second_name')))
-			);
-		}
-		if ($this->form_validation->run() == true && $this->ion_auth->register($name,$password, $email, $additional_data))
-		{
-			//check to see if we are creating the user
-			//redirect them back to the admin page
-			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			//echo "true";
-		}
-		else
-		{
-                   
-                    echo $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-//                    $this->load->view('auth/htmlheader.html');
-//                    $this->load->view('auth/register');
-//                    $this->load->view('auth/htmlfooter.html');
-//
-                }
+            $this->form_validation->set_rules('name', 'Name', 'required|xss_clean');
+            //$this->form_validation->set_rules('surname','Фамилия' , 'required|xss_clean');
+            //$this->form_validation->set_rules('second_name','Отчество' , 'xss_clean');
+            $this->form_validation->set_rules('email','Email', 'required|valid_email');
+            $this->form_validation->set_rules('phone','Phone', 'required|xss_clean|min_length[3]|max_length[15]');
+            //$this->form_validation->set_rules('phone2', $this->lang->line('create_user_validation_phone2_label'), 'required|xss_clean|min_length[3]|max_length[3]');
+            //$this->form_validation->set_rules('phone3', $this->lang->line('create_user_validation_phone3_label'), 'required|xss_clean|min_length[4]|max_length[4]');
+            //$this->form_validation->set_rules('login','login', 'required|xss_clean');
+            //$this->form_validation->set_rules('password','password', 'required|min_length[' .$this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
+            //$this->form_validation->set_rules('password_confirm', 'password_confirm', 'required');
+
+            if ($this->form_validation->run() == true)
+            {
+                $name    =  $this->input->post('name');
+                $email    = $this->input->post('email');
+                $password = mb_substr(str_shuffle(uniqid('tmpPaSs')),0,7);
+
+                $additional_data = array(
+                    'phones'  => $this->mb_ucfirst(mb_strtolower($this->input->post('phone'))),
+                    'temp'    => $password
+                    //'name'  => $this->mb_ucfirst(mb_strtolower($this->input->post('name')))
+    //				'surname'=> $this->mb_ucfirst(mb_strtolower($this->input->post('surname'))),
+    //				'second_name'=> $this->mb_ucfirst(mb_strtolower($this->input->post('second_name')))
+                );
+            }
+            if ($this->form_validation->run() == true && $this->ion_auth->register($name,$password, $email, $additional_data))
+            {
+                //check to see if we are creating the user
+                //redirect them back to the admin page
+                //$this->session->set_flashdata('message',$this->ion_auth->messages() );
+                echo json_encode($this->ion_auth->messages());
+            }
+            else
+            {
+
+                echo $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+    //                    $this->load->view('auth/htmlheader.html');
+    //                    $this->load->view('auth/register');
+    //                    $this->load->view('auth/htmlfooter.html');
+                 echo json_encode($this->data['message']);
+    //
+              }
         
                 
                 
-                }
+     }
     function mb_ucfirst($text) {
         return mb_strtoupper(substr($text, 0, 2)) . substr($text, 2);
     }
