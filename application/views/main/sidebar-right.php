@@ -3,18 +3,18 @@
     
                     <div id="news">
                         <div id="news_title">Внимание, скоро!</div>
-                        <div class="news_tag">
+                        <a href="/"><div class="news_tag">
                             <div class="news_add_date">25 января 2013</div>
                             Конференция. 100 способов увеличения продаж.
-                        </div>
-                        <div class="news_tag">
+                        </div></a>
+                        <a href="/"><div class="news_tag">
                             <div class="news_add_date">30 мая 2013</div>
                             Семинар. 20 стратегий по увеличению продаж.
-                        </div>
-                        <div class="news_tag">
+                        </div></a>
+                        <a href="/"><div class="news_tag">
                             <div class="news_add_date">14 июня 2013</div>
                             Семинар. 20 стратегий по увеличению продаж.
-                        </div>
+                        </div></a>
                     </div>
                     <div id="countdown">
                         

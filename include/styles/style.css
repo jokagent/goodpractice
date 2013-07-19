@@ -832,3 +832,12 @@ h2 {
 #exit {
   display: inline-block;
 }
+
+.add_form input[type="text"] {
+  width: 450px;
+}
+
+#news a {
+  text-decoration: none;
+  color: black;
+}
