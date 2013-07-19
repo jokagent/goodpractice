@@ -49,13 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-<<<<<<< HEAD
-$db['default']['username'] = 'u2567';
-$db['default']['password'] = 'fumen6giluf';
-=======
 $db['default']['username'] = 'root';
 $db['default']['password'] = '123456';
->>>>>>> 839438ad5c68ac4e40c9357e3e2ea7158a45bbca
 $db['default']['database'] = 'u2567_goodpractice';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
