@@ -1588,7 +1588,7 @@ class Ion_auth_model extends CI_Model
 
 		$session_data = array(
 		    'identity'             => $user->{$this->identity_column},
-		   // 'login'                => $user->login,
+		    'name'                => $user->name,
 		    'email'                => $user->email,
 		    'user_id'              => $user->id, //everyone likes to overwrite id so we'll use user_id
 		    'old_last_login'       => $user->last_login
