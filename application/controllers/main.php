@@ -46,6 +46,7 @@ class Main extends CI_Controller {
 		$data['trigger'] = ($name=='buy') ? 0 : 1;
 		$data['logged'] = $this->check_login();
 		$data['URL']= ($name=='blog') ? '/main/viewBlogEntry/' : '/main/viewProductEntry/';
+		$data['nameo'] = $this->records->getNameBy($id);
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');

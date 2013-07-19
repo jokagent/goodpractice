@@ -169,7 +169,7 @@ h2 {
      width: 190px;
      display: inline-block;
      border: 1px solid #D67E2A;
-     background-color: #FAF5DF;
+     /*background-color: #FAF5DF;*/
      /*padding-left: 10px;*/
      padding-top: 10px;
 
@@ -388,14 +388,14 @@ h2 {
 
 #books_imgs {
     width:100px;
-    margin:10px 20px;
+    margin:10px 0px;
 }
 #books_imgs img {
   margin-bottom: 15px;
 }
 #form {
     padding: 5px 15px 15px 15px;
-    border-bottom: 1px solid #D67E2A;
+    /*border-bottom: 1px solid #D67E2A;*/
     
 }
 

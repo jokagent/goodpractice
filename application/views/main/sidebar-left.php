@@ -21,9 +21,9 @@
                              
                         </form>
                     </div>
-                    <span id="books">Наши книги:</span>
+                    <!-- <span id="books">Наши книги:</span> -->
                     <div id="books_imgs">
-                    <img src="/include/images/book1.png">
+                    <img src="/include/images/book1.png" width="190px">
                     <img src="/include/images/book2.png">
                     <img src="/include/images/book3.png">
                     <!-- <div id="bonus">+ бонус</div> -->

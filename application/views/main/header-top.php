@@ -1,9 +1,7 @@
 
         <!-- liike vk-->
         
-               <script type="text/javascript">
-                  VK.init({apiId: 3716413, onlyWidgets: true});
-                </script>
+         
         <!-- liike vk end-->
                         <div id="fb-root"></div>
                 <script>(function(d, s, id) {
@@ -22,7 +20,7 @@
                     <div id="enter">Войти &rarr; </div>
                     <div id="regist">Регистрация</div>
 
-                <?} else {?> <div><a href="/auth/logout">Выйти</a></div> <?}?>    
+                <?} else {?> <div><a href="/auth/logout">Выйти</a></div> <div><? echo $nameo ?></div><?}?>    
                 </div>
                 <div id="soc_icons">
                     <img src="/include/images/soc_icons.png" usemap="#map">

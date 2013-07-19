@@ -40,4 +40,9 @@ class Records extends CI_Model {
     function getProductInfoBy($id){
         return $this->db->select('*')->where('id', $id)->get('buy')->result_array();
     }
+
+    function getNameBy($id){
+        return $this->db->select('name')->where('id',$id)->get('users')->result_array();
+    }
+
 }
