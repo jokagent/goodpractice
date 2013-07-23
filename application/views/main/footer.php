@@ -5,9 +5,9 @@
                     
                     © "Хорошая практика" Все права защищены <br>
                     Ознакомьтесь с <a href="">условиями использования</a>.
-                </div>
+                
                 <div id="soc_icons_foot">
-                    <img src="include/images/soc_icons.png" usemap="#map">
+                    <img src="/include/images/soc_icons_n.png" usemap="#map">
                     <map name="map"> 
                         <area shape="rect" alt="facebook" 
                         coords="0,0,30,27" 
@@ -27,6 +27,7 @@
                         <area shape="rect" alt="google+" 
                         coords="164,0,192,27" 
                         href="http://google.com" target="_blank">
+                </div>
                 </div>
             </div>
         

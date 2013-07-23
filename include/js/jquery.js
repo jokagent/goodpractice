@@ -19,7 +19,7 @@
            if (email && name && phone) {
               $.ajax({
                 type:'POST',
-                url:'http://goodcrm.ru/',//привлеченные
+                url:'http://goodcrm.ru/crm/insertSegment',//привлеченные
                 data:{
                   'email':email,
                   'name':name,
@@ -58,13 +58,17 @@
               type: 'POST',
               url: '/auth/login',
               data: {
-               email :$('#log #enter_email').val(),
-               password : $('#log #password').val()
-           },
-           dataType:'json',
-           success: function(data){
-                console.log(data);if(data.status) location.href='/'; else alert(data.message)
-           }
+                email :$('#log #enter_email').val(),
+                password : $('#log #password').val()
+              },
+              dataType:'json',
+              success: function(data){
+                console.log(data);
+                if(data.status) 
+                location.href='/'; 
+                else
+                $('#errorMessage').html(data.message).removeClass('hidden')
+              }
            })
 
             //$.post('/auth/login',data,function(data){console.log(data);if(data.status) location.href='/'; else alert(data.message)});

@@ -22,21 +22,28 @@ class Adminpanel extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('records');
+        $this->load->model('news');
+        $this->load->library('session');
+        $this->load->library('ion_auth');
     }
     //goodpractice.loc/main/index/$name/$address/
 	public function site($name='blog', $message = '')
 	{
+		$email = $this->session->userdata('email');
+        $data['nameo'] = ($email) ?  $this->session->userdata('name') : '';
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
 		$data['message'] = $message;
 		$data['URL']= '/adminpanel/editBlogEntry/';
-		$this->load->view('main/htmlheader.html');
+		$data['news'] = $this->news->get_three_last_news();
+		$data['logged'] = $this->ion_auth->logged_in();
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
 		
-		$this->load->view('main/center', $data);
+		$this->load->view('main/center');
 		
 		$this->load->view('main/adminPanel.html');
 		$this->load->view('main/sidebar-right');
@@ -79,17 +86,20 @@ class Adminpanel extends CI_Controller {
 	}
 
 	public function posts(){
+		$email = $this->session->userdata('email');
+        $data['nameo'] = ($email) ?  $this->session->userdata('name') : '';
+        $data['logged'] = $this->ion_auth->logged_in();
+        $data['news'] = $this->news->get_three_last_news();
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
-		$data['message'] = $message;
 		$data['URL']= '/adminpanel/editBlogEntry/';
-		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
 		
-		$this->load->view('main/center', $data);
+		$this->load->view('main/center');
 		$this->load->view('main/blog');
 		$this->load->view('main/posts.html');
 		$this->load->view('main/sidebar-right');
@@ -99,12 +109,16 @@ class Adminpanel extends CI_Controller {
 	}
 
 	public function products(){
+		$email = $this->session->userdata('email');
+        $data['nameo'] = ($email) ?  $this->session->userdata('name') : '';
+        $data['logged'] = $this->ion_auth->logged_in();
+        $data['news'] = $this->news->get_three_last_news();
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
-		$data['message'] = $message;
+		
 		$data['URL']= '/adminpanel/editProductEntry/';
-		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -119,6 +133,10 @@ class Adminpanel extends CI_Controller {
 	}
 
 	public function editBlogEntry($id){
+		$email = $this->session->userdata('email');
+        $data['nameo'] = ($email) ?  $this->session->userdata('name') : '';
+        $data['logged'] = $this->ion_auth->logged_in();
+        $data['news'] = $this->news->get_three_last_news();
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
@@ -126,7 +144,7 @@ class Adminpanel extends CI_Controller {
 		$data['post'] = $this->records->getBlogInfoBy($id);
 		$data['URL']= '/adminpanel/changeBlogEntry';
 		
-		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');
@@ -140,13 +158,17 @@ class Adminpanel extends CI_Controller {
 	}
 
 	public function editProductEntry($id) {
+		$email = $this->session->userdata('email');
+        $data['nameo'] = ($email) ?  $this->session->userdata('name') : '';
+        $data['logged'] = $this->ion_auth->logged_in();
+        $data['news'] = $this->news->get_three_last_news();
 		 $data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
 		$data['message'] = 'fuck all of you';
 		$data['post'] = $this->records->getProductInfoBy($id);
 		$data['URL']= '/adminpanel/changeShopEntry';
-		$this->load->view('main/htmlheader.html');
+		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
 		$this->load->view('main/sidebar-left');

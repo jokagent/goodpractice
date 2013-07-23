@@ -3,7 +3,7 @@
     
                     <div id="news">
                         <div id="news_title">Внимание, скоро!</div>
-                        <a href="/"><div class="news_tag">
+                        <!-- <a href="/"><div class="news_tag">
                             <div class="news_add_date">25 января 2013</div>
                             Конференция. 100 способов увеличения продаж.
                         </div></a>
@@ -14,7 +14,15 @@
                         <a href="/"><div class="news_tag">
                             <div class="news_add_date">14 июня 2013</div>
                             Семинар. 20 стратегий по увеличению продаж.
+                        </div></a> -->
+                        <?
+                            foreach ($news as $key => $value) {?>
+                                <a href=<?='"'.$URL.'/'.$value['id'].'"'?>><div class="news_tag">
+                            <div class="news_add_date"><?=$value['date']?></div>
+                            <?=$value['description']?>
                         </div></a>
+                            <?}
+                        ?>
                     </div>
                     <div id="countdown">
                         

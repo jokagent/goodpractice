@@ -20,10 +20,10 @@
                     <div id="enter">Войти &rarr; </div>
                     <div id="regist">Регистрация</div>
 
-                <?} else {?> <div><a href="/auth/logout">Выйти</a></div> <div><? echo $nameo ?></div><?}?>    
+                <?} else {?> <div class="logged"><a href="/auth/logout">Выйти</a></div> <div class="logged"><? echo 'Привет, '.$nameo.'!' ?></div><?}?>    
                 </div>
                 <div id="soc_icons">
-                    <img src="/include/images/soc_icons.png" usemap="#map">
+                    <img src="/include/images/soc_icons_n.png" usemap="#map">
                     <map name="map"> 
                         <area shape="rect" alt="facebook" 
                         coords="0,0,30,27" 
