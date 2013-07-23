@@ -45,6 +45,7 @@ class Main extends CI_Controller {
 		$data['trigger'] = ($name=='buy') ? 0 : 1;
 		$data['logged'] = $this->check_login();
 		$data['URL']= ($name=='blog') ? '/main/viewBlogEntry/' : '/main/viewProductEntry/';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
@@ -107,6 +108,7 @@ class Main extends CI_Controller {
 		$data['logged'] = $this->check_login();
 		$data['news'] = $this->news->get_three_last_news();
 		$data['URL']= '/main/viewBlogEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -135,6 +137,7 @@ class Main extends CI_Controller {
 		$data['post'] = $this->records->getProductInfoBy($id);
 		$data['logged'] = $this->check_login();
 		$data['URL']= '/main/viewProductEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -158,6 +161,7 @@ class Main extends CI_Controller {
 		$data['logged'] = $this->check_login();
 		$data['news'] = $this->news->get_three_last_news();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -180,6 +184,7 @@ class Main extends CI_Controller {
 		$data['logged'] = $this->check_login();
 		$data['news'] = $this->news->get_three_last_news();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -202,6 +207,7 @@ class Main extends CI_Controller {
 		$data['logged'] = $this->check_login();
 		$data['news'] = $this->news->get_three_last_news();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -224,6 +230,7 @@ class Main extends CI_Controller {
 		$data['logged'] = $this->check_login();
 		$data['news'] = $this->news->get_three_last_news();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -246,6 +253,7 @@ class Main extends CI_Controller {
 		$data['logged'] = $this->check_login();
 		$data['news'] = $this->news->get_three_last_news();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -267,6 +275,7 @@ class Main extends CI_Controller {
 		$data['logged'] = $this->check_login();
 		$data['news'] = $this->news->get_three_last_news();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -288,6 +297,7 @@ class Main extends CI_Controller {
 		$data['news'] = $this->news->get_three_last_news();
 		$data['logged'] = $this->check_login();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -314,6 +324,7 @@ class Main extends CI_Controller {
 		$data['report'] = $this->news->get_news_by($id);
 		$data['logged'] = $this->check_login();
 		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');

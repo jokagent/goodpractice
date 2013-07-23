@@ -17,7 +17,7 @@
                         </div></a> -->
                         <?
                             foreach ($news as $key => $value) {?>
-                                <a href=<?='"'.$URL.'/'.$value['id'].'"'?>><div class="news_tag">
+                                <a href=<?='"'.$URL_news.$value['id'].'"'?>><div class="news_tag">
                             <div class="news_add_date"><?=$value['date']?></div>
                             <?=$value['description']?>
                         </div></a>
