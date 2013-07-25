@@ -68,7 +68,7 @@
                 },
                 dataType:'json',
                 success: function(data){
-                  alert(data)
+                  //alert(data)
                   $('#registr_form').addClass('hidden');
                   $('#thanks').removeClass('hidden');
                   
