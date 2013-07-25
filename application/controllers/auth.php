@@ -11,7 +11,7 @@ class Auth extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('url');
         $this->load->helper('language');
-        $this->lang->load('ion_auth','english');
+        $this->lang->load('ion_auth','russian');
 		$this->db1 = $this->load->database('default', true);
 	}//отключить Notice
      function registr(){
@@ -26,21 +26,26 @@ class Auth extends CI_Controller {
             //$this->form_validation->set_rules('surname','Фамилия' , 'required|xss_clean');
             //$this->form_validation->set_rules('second_name','Отчество' , 'xss_clean');
             $this->form_validation->set_rules('email','Email', 'required|valid_email');
+            if($this->ion_auth->email_check($this->input->post('email'))){
+           			 echo "Пользователь с таким Email уже зарегистрирован";
+           			 return false;
+           		}	 
             $this->form_validation->set_rules('phone','Phone', 'required|xss_clean|min_length[3]|max_length[15]');
             //$this->form_validation->set_rules('phone2', $this->lang->line('create_user_validation_phone2_label'), 'required|xss_clean|min_length[3]|max_length[3]');
             //$this->form_validation->set_rules('phone3', $this->lang->line('create_user_validation_phone3_label'), 'required|xss_clean|min_length[4]|max_length[4]');
             //$this->form_validation->set_rules('login','login', 'required|xss_clean');
-            //$this->form_validation->set_rules('password','password', 'required|min_length[' .$this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
-            //$this->form_validation->set_rules('password_confirm', 'password_confirm', 'required');
+            $this->form_validation->set_rules('password','Пароль', 'required|min_length[' .$this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[repassword]');
+            $this->form_validation->set_rules('repassword','Повтор', 'required');
 
             if ($this->form_validation->run() == true)
             {
-                $name    =  $this->input->post('name');
+                $name    = $this->mb_ucfirst(mb_strtolower($this->input->post('name')));
                 $email    = $this->input->post('email');
-                $password = mb_substr(str_shuffle(uniqid('tmpPaSs')),0,7);
+                $password = $this->input->post('password');
+                //mb_substr(str_shuffle(uniqid('tmpPaSs')),0,7);
 
                 $additional_data = array(
-                    'phones'  => $this->mb_ucfirst(mb_strtolower($this->input->post('phone'))),
+                    'phones'  => $this->input->post('phone'),
                     'temp'    => $password
                     //'name'  => $this->mb_ucfirst(mb_strtolower($this->input->post('name')))
     //				'surname'=> $this->mb_ucfirst(mb_strtolower($this->input->post('surname'))),
@@ -57,17 +62,20 @@ class Auth extends CI_Controller {
             else
             {
 
-                echo $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+                print_r( $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message'))));
     //                    $this->load->view('auth/htmlheader.html');
     //                    $this->load->view('auth/register');
     //                    $this->load->view('auth/htmlfooter.html');
-                 echo json_encode($this->data['message']);
+               //  echo json_encode($this->data['message']);
     //
               }
         
                 
                 
      }
+     // function email (){
+
+     // }
     function mb_ucfirst($text) {
         return mb_strtoupper(substr($text, 0, 2)) . substr($text, 2);
     }

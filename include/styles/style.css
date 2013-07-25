@@ -846,3 +846,19 @@ h2 {
   display: inline-block;
   margin: 0 5px;
 }
+
+.buy_entry {
+  border: 1px solid #CcCCCc;
+  margin: 10px 0;
+
+}
+.buy_entry a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.error_m {
+  color: red;
+  font-size: 11px;
+}

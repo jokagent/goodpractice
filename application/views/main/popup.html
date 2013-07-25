@@ -15,8 +15,14 @@
                 <h3>Регистрация</h3>
                 <form action="http://goodcrm.ru/crm/insertSegment" id="registr" method="POST">
                     <input type="text" name="name" id="reg_name" placeholder="Ваше имя" class="reg_data">
-                    <input type="text" name="email" id="reg_email" placeholder="Ваш e-mail" class="reg_data">
+                    <div class="hidden error_m" id="phone_error">Не меньше 6 цифр!</div>
                     <input type="text" name="phone" id="reg_phone" placeholder="Ваш телефон" class="reg_data">
+                    <div class="hidden error_m" id="email_error">Email введен неправильно!</div>
+                    <input type="text" name="email" id="reg_email" placeholder="Ваш e-mail" class="reg_data">
+                    <div class="hidden error_m" id="password_error">Не меньше 6 символо!</div>
+                    <input type="password" name="password" id="reg_pas" placeholder="Введите пароль" class="reg_data">
+                    <div class="hidden error_m" id="repassword_error">Пароль не совпадает!</div>
+                    <input type="password" name="repassword" id="reg_repas" placeholder="Повторите пароль" class="reg_data">
                     <input type="button" id="get_access" class="entreg_submit"value="Получить доступ!">
                 </form>
             </div>
