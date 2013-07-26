@@ -25,7 +25,7 @@
                     <div id="enter">Войти &rarr; </div>
                     <div id="regist">Регистрация</div>
 
-                <?} else {?> <div id="exit"><a href="/auth/logout">Выйти</a></div> <?}?>    
+                <?} else {?> <div class="logged"><? echo $nameo ?></div> <div id="exit"><a href="/auth/logout">Выйти</a></div> <?}?>    
                 </div>
                 <div id="bottom_menu">
                       <div class="menu_button popup_reg" id="red_button"><a href="/main/site/buy">КУПИТЬ</a>
