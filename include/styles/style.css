@@ -56,7 +56,7 @@ body,html {
     width: 1000px;
     position: relative;
     margin:5px auto 10px auto;
-    /*padding-top:7px;*/
+    padding-top:7px;
     
 }
 #logo {
@@ -86,7 +86,7 @@ body,html {
 #entreg {
     font-size: 13px;
     width: 250px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     /*display: inline;*/
     
     
@@ -218,7 +218,9 @@ h2 {
      margin-bottom: 20px;
      font-weight: bold;
      color:red;
-     
+     font-size: 26px;
+     text-align: center;
+           
  }
  .center_article{
      cursor: pointer;

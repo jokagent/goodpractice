@@ -28,7 +28,7 @@
                             <iframe width="480" height="280" src="http://www.youtube.com/embed/VaDIpoooMfw" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div id="center_title">Бесплатные инструменты по увеличению продаж </div>
+                    <div id="center_title">БЕСПЛАТНЫЕ ИНСТРУМЕНТЫ ДЛЯ УВЕЛИЧЕНИЯ ПРОДАЖ</div>
                     <?}?>
 
                      

@@ -20,13 +20,6 @@
                         </div>
                         <!--tweet-->
                     </div>
-              <div id="entreg">
-                <? if(!$logged){?>
-                    <div id="enter">Войти &rarr; </div>
-                    <div id="regist">Регистрация</div>
-
-                <?} else {?> <div class="logged"><? echo $nameo ?></div> <div id="exit"><a href="/auth/logout">Выйти</a></div> <?}?>    
-                </div>
                 <div id="bottom_menu">
                       <div class="menu_button popup_reg" id="red_button"><a href="/main/site/buy">КУПИТЬ</a>
                     
@@ -40,6 +33,13 @@
                         <div class="menu_button"><a href="/main/about_us/">О НАС</a>
                     
                         </div>                    
+                </div>
+              <div id="entreg">
+                <? if(!$logged){?>
+                    <div id="enter">Войти &rarr; </div>
+                    <div id="regist">Регистрация</div>
+
+                <?} else {?> <div class="logged"><? echo $nameo ?></div> <div id="exit"><a href="/auth/logout">Выйти</a></div> <?}?>    
                 </div>
             </div>
 </div>

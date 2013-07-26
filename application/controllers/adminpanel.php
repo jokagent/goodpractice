@@ -34,10 +34,11 @@ class Adminpanel extends CI_Controller {
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
-		$data['message'] = $message;
+		// $data['message'] = $message;
 		$data['URL']= '/adminpanel/editBlogEntry/';
 		$data['news'] = $this->news->get_three_last_news();
 		$data['logged'] = $this->ion_auth->logged_in();
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -94,6 +95,7 @@ class Adminpanel extends CI_Controller {
 		$data['buy'] = $this->records->all_products();
 		$data['trigger'] = 0;
 		$data['URL']= '/adminpanel/editBlogEntry/';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -118,6 +120,7 @@ class Adminpanel extends CI_Controller {
 		$data['trigger'] = 0;
 		
 		$data['URL']= '/adminpanel/editProductEntry/';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
@@ -143,6 +146,7 @@ class Adminpanel extends CI_Controller {
 		$data['message'] = 'fuck all of you';
 		$data['post'] = $this->records->getBlogInfoBy($id);
 		$data['URL']= '/adminpanel/changeBlogEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
@@ -168,6 +172,7 @@ class Adminpanel extends CI_Controller {
 		$data['message'] = 'fuck all of you';
 		$data['post'] = $this->records->getProductInfoBy($id);
 		$data['URL']= '/adminpanel/changeShopEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
 		$this->load->view('main/htmlheader.html', $data);
 		$this->load->view('main/header-top');
 		$this->load->view('main/header-bottom');
