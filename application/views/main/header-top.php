@@ -15,6 +15,7 @@
             
             <div id="top">
                 <div id="logo"><a href="/"></a></div>
+                <div id="logo_title"><a href="/"></a></div>
                 <div id="entreg">
                 <? if(!$logged){?>
                     <div id="enter">Войти &rarr; </div>
