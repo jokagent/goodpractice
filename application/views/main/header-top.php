@@ -14,8 +14,8 @@
         <div id="dynamic_header">
             
             <div id="top">
-                <div id="logo"><a href="/"></a></div>
-                <div id="logo_title"><a href="/"></a></div>
+                <div id="logo"><a href="/"><img src="/include/images/logo.png"></a></div>
+                <div id="logo_title"><a href="/"><img src="/include/images/logo_title.png"></a></div>
                 <div id="entreg">
                 <? if(!$logged){?>
                     <div id="enter">Войти &rarr; </div>
