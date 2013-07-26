@@ -675,12 +675,14 @@ h2 {
   width: 290px;
   height: 392px;
   background-image: url('/include/images/girl_crm_3.png');
+  position: absolute;
+  bottom: 0;
 }
 .entreg_form {
   display: inline-block;
   width: 340px;
   vertical-align: top;
-  margin-left: 30px;
+  margin-left: 60px;
 
 
 }
@@ -861,4 +863,8 @@ h2 {
 .error_m {
   color: red;
   font-size: 11px;
+}
+
+.entreg {
+  height: 520px;
 }
