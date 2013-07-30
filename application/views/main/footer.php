@@ -3,8 +3,9 @@
                 <div id="footer_info">
                     <div id="footer_contacts">Увеличим ваши продажи!</div>
                     
-                    © "Хорошая практика" Все права защищены <br>
+                   <div class="footer_copyright"> © "Хорошая практика" Все права защищены <br>
                     Ознакомьтесь с <a href="">условиями использования</a>.
+                    </div>
                 
                 <div id="soc_icons_foot">
                     <img src="/include/images/soc_icons_n.png" usemap="#map">

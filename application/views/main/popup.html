@@ -1,6 +1,9 @@
   <div class="entreg" id="popup_reg">
         <div class="entreg_img">
-            <div class="logo"></div>
+            <div>
+              <div id="logo"><a href="/"><img src="/include/images/logo.png"></a></div>
+                <div id="logo_title"><a href="/"><img src="/include/images/logo_title.png"></a></div>
+            </div>
             <div class="telka"></div>
         </div>
         <div class="entreg_form" id="reg">
@@ -26,7 +29,7 @@
                     <input type="button" id="get_access" class="entreg_submit"value="Получить доступ!">
                 </form>
             </div>
-            <div id="thanks" class="hidden">Благодарим за регистрацию! Зайдите на вашу почту. Вам высланы данные для входа на сайт и ссылкой для активизации вашего аккаунта!</div>
+            <div id="thanks" class="hidden">Благодарим за регистрацию! Зайдите на вашу почту. Вам высланы данные для входа на сайт и ссылкой для активации вашего аккаунта!</div>
 
             <div class="poplink" id='log_link'> Вход для зарегистрированных пользователей&rarr;</div>
         </div>
@@ -66,6 +69,9 @@
 
           return false;
        }
+       $(window).resize(function(e){
+          centerBox();
+       })
               // setTimeout(function(){centerBox();}, 10000);
                        $('.blog_entry').click(function(e){
                         e.preventDefault();

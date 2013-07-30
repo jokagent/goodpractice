@@ -2,8 +2,9 @@
                     <div id="form">
                         <div id="form_title">Получите бесплатно наши книги!</div>
                         <form action="formdata.php" id="formform">
-                            <div class="input_title">Ваше имя</div>
+                            <div class="input_title">Ваше имя
                             <input type="text" name="name" class="form_input">
+                            </div>
                             <div class="input_title">Ваш e-mail</div>
                             <input type="text" name="email" class="form_input">
                             <div class="bottom_info">

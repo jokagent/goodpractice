@@ -49,14 +49,15 @@ body,html {
     width: 980px;
     margin: 110px auto 0 auto;
     position: relative;
-    padding-right: 20px;
+    /*padding-right: 20px;*/
+    padding:0 0 0 5px;
     
 }
 #top {
-    width: 1000px;
+    width: 980px;
     position: relative;
     margin:5px auto 10px auto;
-    padding-top:7px;
+    padding:7px 0 0 5px;
     
 }
 #logo {
@@ -66,6 +67,7 @@ body,html {
     display: inline-block;
     margin-bottom: 10px;
     /*margin-top:20px;*/
+    margin-left: 10px;
 }
 
 #logo_title {
@@ -88,7 +90,7 @@ body,html {
     width: 250px;
     /*margin-bottom: 20px;*/
     /*display: inline;*/
-    
+    margin-left: 14px;
     
 }
 #enter, #regist {
@@ -144,11 +146,11 @@ body,html {
 }
 
 #afterhead_info {
-    width: 400px;
+    width: 390px;
     float: right;
     font-size: 16px;
     color:black;
-    /*margin-right: 30px;*/
+    margin-right: 15px;
 }
 h2 {
     letter-spacing: 1px;
@@ -403,11 +405,11 @@ h2 {
 }
 
 #footer_info {
-    width:1000px;
+    width:980px;
     color:white;
     font-size: 14px;
     margin: 0 auto;
-    padding:20px 0 0 0;
+    padding:20px 0 0 5px;
     position: relative;
     
     
@@ -440,6 +442,7 @@ h2 {
 .input_title {
     font-size: 13px;
     color:#5E5E5E;
+    width: 160px;
 }
 
 #formform {
@@ -450,7 +453,7 @@ h2 {
     background-color: white;
     border-radius: none;
     border:1px solid #D67E2A;
-    width:160px;
+    /*width:93%;*/
     margin:5px 0;
 }
 
@@ -504,14 +507,14 @@ h2 {
 #footer_menu {
     position: relative;
     border-top: 1px solid #cdcdcd;
-    padding:10px;
+    padding:10px 0;
     margin-top:120px;
 }
 
 #bottom_menu {
     float:right;
     margin-top: 3px;
-    margin-right: -8px;
+    margin-right: 15px;
 }
 
 #footer_contacts {
@@ -519,6 +522,7 @@ h2 {
     font-size:20px;
     font-weight: bold;
     color:black;
+    margin-right: 15px;
 }
 
 #social_like2 {
@@ -907,4 +911,14 @@ h2 {
 
 .entreg {
   height: 520px;
+}
+
+input {
+  -webkit-appearance: none;
+    border-radius: 0;
+    width: 93%;
+}
+
+.footer_copyright {
+  margin-left: 15px;
 }

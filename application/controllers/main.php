@@ -172,6 +172,11 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
 	}
 	public function couching(){
 		$email = $this->session->userdata('email');
@@ -195,6 +200,11 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
 	}
 	public function trening(){
 		$email = $this->session->userdata('email');
@@ -218,6 +228,11 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
 	}
 	public function about_us(){
 		$email = $this->session->userdata('email');
@@ -241,6 +256,11 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
 	}
 	public function history(){
 		$email = $this->session->userdata('email');
@@ -264,7 +284,13 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
-	}public function clients(){
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
+	}
+	public function clients(){
 		$email = $this->session->userdata('email');
         if ($email)
         {
@@ -286,7 +312,13 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
-	}public function contacts(){
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
+	}
+	public function contacts(){
 		$email = $this->session->userdata('email');
         if ($email)
         {
@@ -308,6 +340,11 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html');
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
 	}
 
 	public function viewNewsEntry($id) {
@@ -336,6 +373,43 @@ class Main extends CI_Controller {
 		$this->load->view('main/footer-menu');
 		$this->load->view('main/footer');
 		$this->load->view('main/htmlfooter.html'); 
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
+	}
+
+	public function registration() {
+			$email = $this->session->userdata('email');
+        if ($email)
+        {
+
+            $data['nameo'] = $this->session->userdata('name');
+        }
+		
+		$data['trigger'] = 0;
+		
+		$data['news'] = $this->news->get_three_last_news();
+		$data['logged'] = $this->check_login();
+		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
+		$this->load->view('main/htmlheader.html', $data);
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center');
+		// $this->load->view('main/buy');
+		$this->load->view('main/registration.html');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html'); 
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
 	}
 }
 
