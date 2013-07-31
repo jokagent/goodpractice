@@ -1,0 +1,2 @@
+31:07:2013 05:18:56 orderId: ; Amount: ; Date: ; Currency: ; Status: ; Checksum: 0
+31:07:2013 05:30:29 orderId: ; Amount: ; Date: ; Currency: ; Status: ; Checksum: 0

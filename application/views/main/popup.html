@@ -55,31 +55,28 @@
         </div>
         </div>
           <script>
-
-                 var boxWidth = 720;
-       function centerBox() {
-          var winWidth = $(window).width();
-          var winHeight = $(document).height();
-          // var scrollPos = $(document).height()
-          var disWidth = (winWidth - boxWidth) / 2;
-          var disHeight = ($(window).height()/2)-230;
-
-          $('.entreg').css({'left':disWidth+'px', 'top':disHeight+'px'}).show();
-          $('#blackout').css({'width':winWidth+'px', 'height':winHeight+'px'}).show();
-
-          return false;
-       }
-       $(window).resize(function(e){
-          centerBox();
-       })
-              // setTimeout(function(){centerBox();}, 10000);
-                       $('.blog_entry').click(function(e){
-                        e.preventDefault();
-                      $('body').append('<div id="blackout"></div>');
-                      // $(window).resize(centerBox);
-                      // $(window).scroll(centerBox);
-                      centerBox();
-                    });
+          var boxWidth = 720;
+          function centerBox(show) {
+              var winWidth = $(window).width();
+              var winHeight = $(document).height();
+              // var scrollPos = $(document).height()
+              var disWidth = (winWidth - boxWidth) / 2;
+              var disHeight = ($(window).height()/2)-230;
+              $('#blackout').css({'width':winWidth+'px', 'height':winHeight+'px'});
+              $('.entreg').css({'left':disWidth+'px', 'top':disHeight+'px'});
+              if (show) $('#blackout, .entreg').show();
+              return false;
+           }
+         $(window).resize(function(e){
+            centerBox(false);
+         })
+         $('.blog_entry').click(function(e){
+          e.preventDefault();
+          $('body').append('<div id="blackout"></div>');
+          // $(window).resize(centerBox);
+          // $(window).scroll(centerBox);
+          centerBox(true);
+        });
 
                      
-              </script>
+        </script>

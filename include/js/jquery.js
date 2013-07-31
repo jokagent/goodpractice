@@ -49,12 +49,9 @@
                 data:{
                   'email':email,
                   'name':name,
-                  'phone':phone,
-                  
-
+                  'phone':phone
                 },
                 dataType:'json'
-
               });
                $.ajax({
                 type:'POST',
@@ -117,14 +114,14 @@
           $('#enter').click(function(e){
                       e.preventDefault();
                       $('body').append('<div id="blackout"></div>');
-                      centerBox();
+                      centerBox(true);
                       $('#log').removeClass("hidden");
                        $('#reg').addClass("hidden");
                        });
           $('#regist').click(function(e){
                e.preventDefault();
                $('body').append('<div id="blackout"></div>');
-               centerBox();
+               centerBox(true);
           });
     });
     

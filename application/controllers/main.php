@@ -411,6 +411,116 @@ class Main extends CI_Controller {
             }
 
 	}
+
+	public function fail() {
+			$email = $this->session->userdata('email');
+        if ($email)
+        {
+
+            $data['nameo'] = $this->session->userdata('name');
+        }
+		
+		$data['trigger'] = 0;
+		
+		$data['news'] = $this->news->get_three_last_news();
+		$data['logged'] = $this->check_login();
+		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
+		$this->load->view('main/htmlheader.html', $data);
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center');
+		// $this->load->view('main/buy');
+		$this->load->view('main/fail');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html'); 
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
+	}
+	public function success() {
+			$email = $this->session->userdata('email');
+        if ($email)
+        {
+
+            $data['nameo'] = $this->session->userdata('name');
+        }
+		
+		$data['trigger'] = 0;
+		
+		$data['news'] = $this->news->get_three_last_news();
+		$data['logged'] = $this->check_login();
+		$data['URL']= '/main/viewNewsEntry';
+		$data['URL_news'] = '/main/viewNewsEntry/';
+		$this->load->view('main/htmlheader.html', $data);
+		$this->load->view('main/header-top');
+		$this->load->view('main/header-bottom');
+		$this->load->view('main/sidebar-left');
+		$this->load->view('main/center');
+		// $this->load->view('main/buy');
+		$this->load->view('main/success');
+		$this->load->view('main/sidebar-right');
+		$this->load->view('main/footer-menu');
+		$this->load->view('main/footer');
+		$this->load->view('main/htmlfooter.html'); 
+		 if (!$this->ion_auth->logged_in())
+            {
+                $this->load->view('main/popup.html');
+            }
+
+	}
+
+	public function getRespondFromIM() {
+			$email = $this->session->userdata('email');
+        if ($email)
+        {
+
+            $data['nameo'] = $this->session->userdata('name');
+        }
+		
+		$data['trigger'] = 0;
+		$respondData = array(
+			'userEmail' => $this->input->post('userEmail'),
+			// 'orderId' => $this->input->post('orderId'),
+			// 'serviceName' => $this->input->post('serviceName'),
+			// 'eshopAccount' => $this->input->post('eshopAccount'),
+			// 'recipientAmount' => $this->input->post('recipientAmount'),
+			// 'recipientCurrency' => $this->input->post('recipientCurrency'),
+			// 'paymentStatus' => $this->input->post('paymentStatus'),
+			// 'userName' => $this->input->post('userName'),
+			// 'paymentData' => $this->input->post('paymentData'),
+			// 'userEmail' => $this->input->post('secretKey'),
+		);
+		$in_eshopId = $this->input->post("eshopId");
+		$in_orderId = $this->input->post("orderId");
+		$in_serviceName = $this->input->post("serviceName");
+		$in_eshopAccount = $this->input->post("eshopAccount");
+		$in_recipientAmount = $this->input->post("recipientAmount");
+		$in_recipientCurrency = $this->input->post("recipientCurrency");
+		$in_paymentStatus = $this->input->post("paymentStatus");
+		$in_userName = $this->input->post("userName");
+		$in_userEmail = $this->input->post("userEmail");
+		$in_paymentData = $this->input->post("paymentData");
+		$in_secretKey = $this->input->post("secretKey");		// нужен для проверки по HTTPS хотя в любом случае проверка )о
+		// 											//контрольной подписи предпочтительна, по этому просто игнорируем его.
+		$in_hash = strtoupper($this->input->post("hash"));
+		$f=@fopen("orders.txt","a+") or
+          die("error");
+		fputs($f,	date("d:m:Y h:i:s").
+					" orderId: $in_orderId;".
+					" Amount: $in_recipientAmount;".
+					" Date: $in_paymentData;".
+					" Currency: $in_recipientCurrency;".
+					" Status: $in_paymentStatus;".
+					" Checksum: ".($checksum==true?1:0)."\n"
+			);
+		fclose($f);
+	}
 }
 
 /* End of file welcome.php */

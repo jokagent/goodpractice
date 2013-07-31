@@ -1,26 +1,14 @@
-﻿<html> 
-<head> 
-... 
-</head> 
-<body> 
-... 
+﻿
 <form action="https://merchant.intellectmoney.ru/ru/" name="pay" method="POST"> 
      <input type="hidden" name="eshopId" value="451343"> 
-     <input type="hidden" name="orderId" value="order_0000001"> 
+     <input type="hidden" name="orderId" value="<?=$value['id']?>"> 
      <input type="hidden" name="serviceName" value="Книга"> 
      <input type="hidden" name="recipientAmount" value="12.30"> 
      <input type="hidden" name="recipientCurrency" value="RUB"> 
      <input type="hidden" name="successUrl" value="http://eshop.ru/success"> 
      <input type="hidden" name="failUrl" value="http://eshop.ru/fail">
-     <input type="hidden" name="expireDate" value="2010-11-30 22:55:00"> 
-              
-     <input type="hidden" name="userField_1" value="value_1"> 
-     <input type="hidden" name="userField_2" value="value_2"> 
-              ... 
-              ... 
      <input type="submit" name="button" value="оплатить"> 
   
 </form> 
 
-</body>
-</html>
+
