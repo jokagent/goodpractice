@@ -517,6 +517,8 @@ class Main extends CI_Controller {
 					" Date: $in_paymentData;".
 					" Currency: $in_recipientCurrency;".
 					" Status: $in_paymentStatus;".
+					" Name: $in_userName;".
+					" Email: $in_userEmail;"
 					" Checksum: ".($checksum==true?1:0)."\n"
 			);
 		fclose($f);
