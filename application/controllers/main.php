@@ -476,6 +476,8 @@ class Main extends CI_Controller {
 	}
 
 	public function getRespondFromIM() {
+		$secretKey = "Montblanc789";
+		
 			$email = $this->session->userdata('email');
         if ($email)
         {
@@ -484,18 +486,7 @@ class Main extends CI_Controller {
         }
 		
 		$data['trigger'] = 0;
-		$respondData = array(
-			'userEmail' => $this->input->post('userEmail'),
-			// 'orderId' => $this->input->post('orderId'),
-			// 'serviceName' => $this->input->post('serviceName'),
-			// 'eshopAccount' => $this->input->post('eshopAccount'),
-			// 'recipientAmount' => $this->input->post('recipientAmount'),
-			// 'recipientCurrency' => $this->input->post('recipientCurrency'),
-			// 'paymentStatus' => $this->input->post('paymentStatus'),
-			// 'userName' => $this->input->post('userName'),
-			// 'paymentData' => $this->input->post('paymentData'),
-			// 'userEmail' => $this->input->post('secretKey'),
-		);
+
 		$in_eshopId = $this->input->post("eshopId");
 		$in_orderId = $this->input->post("orderId");
 		$in_serviceName = $this->input->post("serviceName");
@@ -509,6 +500,31 @@ class Main extends CI_Controller {
 		$in_secretKey = $this->input->post("secretKey");		// нужен для проверки по HTTPS хотя в любом случае проверка )о
 		// 											//контрольной подписи предпочтительна, по этому просто игнорируем его.
 		$in_hash = strtoupper($this->input->post("hash"));
+
+		$for_hash = $in_eshopId."::".
+			$in_orderId."::".
+			$in_serviceName."::".
+			$in_eshopAccount."::".
+			$in_recipientAmount."::".
+			$in_recipientCurrency."::".
+			$in_paymentStatus."::".
+			$in_userName."::".
+			$in_userEmail."::".
+			$in_paymentData."::".
+			$secretKey; 
+			$my_hash = strtoupper(md5($for_hash));
+
+		if ($my_hash == $in_hash)
+			{
+				$checksum = true;
+			}
+		else
+			{
+				$checksum = false;
+			}
+
+
+
 		$f=@fopen("orders.txt","a+") or
           die("error");
 		fputs($f,	date("d:m:Y h:i:s").
@@ -522,6 +538,13 @@ class Main extends CI_Controller {
 					" Checksum: ".($checksum==true?1:0)."\n"
 			);
 		fclose($f);
+		if (!$checksum)
+			{
+			  echo "bad sign\n";
+			  exit();
+			}	
+				// Символический вывод подтверждающий успешность получения информации и совпадения подписей
+		echo "OK\n";
 	}
 }
 
