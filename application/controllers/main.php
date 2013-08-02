@@ -527,7 +527,7 @@ class Main extends CI_Controller {
 
 		$f=@fopen("orders.txt","a+") or
           die("error");
-		fputs($f,	date("d:m:Y h:i:s").
+		//fputs($f,	date("d:m:Y h:i:s").
 					" orderId: $in_orderId;".
 					" Amount: $in_recipientAmount;".
 					" Date: $in_paymentData;".
@@ -538,6 +538,7 @@ class Main extends CI_Controller {
 					" For hash : $for_hash".
 					" Checksum: ".($checksum==true?1:0)."\n"
 			);
+		fputs($f, "$my_hash\n$in_hash");
 		fclose($f);
 		if (!$checksum)
 			{
