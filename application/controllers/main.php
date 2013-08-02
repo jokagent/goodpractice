@@ -528,16 +528,16 @@ class Main extends CI_Controller {
 		$f=@fopen("orders.txt","a+") or
           die("error");
 		//fputs($f,	date("d:m:Y h:i:s").
-					" orderId: $in_orderId;".
-					" Amount: $in_recipientAmount;".
-					" Date: $in_paymentData;".
-					" Currency: $in_recipientCurrency;".
-					" Status: $in_paymentStatus;".
-					" Name: $in_userName;".
-					" Email: $in_userEmail;".
-					" For hash : $for_hash".
-					" Checksum: ".($checksum==true?1:0)."\n"
-			);
+			// 		" orderId: $in_orderId;".
+			// 		" Amount: $in_recipientAmount;".
+			// 		" Date: $in_paymentData;".
+			// 		" Currency: $in_recipientCurrency;".
+			// 		" Status: $in_paymentStatus;".
+			// 		" Name: $in_userName;".
+			// 		" Email: $in_userEmail;".
+			// 		" For hash : $for_hash".
+			// 		" Checksum: ".($checksum==true?1:0)."\n"
+			// );
 		fputs($f, "$my_hash\n$in_hash");
 		fclose($f);
 		if (!$checksum)
