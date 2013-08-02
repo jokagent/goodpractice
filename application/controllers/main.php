@@ -511,7 +511,7 @@ class Main extends CI_Controller {
 			$in_userName."::".
 			$in_userEmail."::".
 			$in_paymentData."::".
-			$secretKey; 
+			$in_secretKey; 
 			$my_hash = strtoupper(md5($for_hash));
 
 		if ($my_hash == $in_hash)
