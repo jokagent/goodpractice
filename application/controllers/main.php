@@ -538,7 +538,7 @@ class Main extends CI_Controller {
 			// 		" For hash : $for_hash".
 			// 		" Checksum: ".($checksum==true?1:0)."\n"
 			// );
-		fputs($f, "$my_hash\n$in_hash");
+		fputs($f, "$in_secretkey\nМой kещ :: $my_hash\nNe moy :: $in_hash");
 		fclose($f);
 		if (!$checksum)
 			{
