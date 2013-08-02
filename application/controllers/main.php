@@ -511,7 +511,7 @@ class Main extends CI_Controller {
 			$in_userName."::".
 			$in_userEmail."::".
 			$in_paymentData."::".
-			$in_secretKey; 
+			$secretKey; 
 			$my_hash = strtoupper(md5($for_hash));
 
 		if ($my_hash == $in_hash)
@@ -535,6 +535,7 @@ class Main extends CI_Controller {
 					" Status: $in_paymentStatus;".
 					" Name: $in_userName;".
 					" Email: $in_userEmail;".
+					" For hash : $for_hash".
 					" Checksum: ".($checksum==true?1:0)."\n"
 			);
 		fclose($f);
