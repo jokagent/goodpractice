@@ -530,13 +530,15 @@ class Main extends CI_Controller {
 		fputs($f,	date("d:m:Y h:i:s").
 					" orderId: $in_orderId;".
 					" ServiceName: $in_serviceName".
+					" eshopAccount: $in_eshopAccount".
 					" Amount: $in_recipientAmount;".
-					" Date: $in_paymentData;".
 					" Currency: $in_recipientCurrency;".
+					" Date: $in_paymentData;".
 					" Status: $in_paymentStatus;".
 					" Name: $in_userName;".
 					" Email: $in_userEmail;".
 					" PaymentData: $in_paymentData".
+					" secretKey: $in_secretKey".
 					// " For hash : $for_hash".
 					" Checksum: ".($checksum==true?1:0)."\n"
 			);
