@@ -529,7 +529,7 @@ class Main extends CI_Controller {
           die("error");
 		fputs($f,	date("d:m:Y h:i:s").
 					" orderId: $in_orderId;".
-					" ServiceName: urldecode($in_serviceName)".
+					" ServiceName: $in_serviceName".
 					" eshopAccount: $in_eshopAccount".
 					" Amount: $in_recipientAmount;".
 					" Currency: $in_recipientCurrency;".
