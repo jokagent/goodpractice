@@ -12,7 +12,8 @@
 				<input type="hidden" name="successUrl" value="http://miloslavskiy.com/main/success"> 
 				<input type="hidden" name="failUrl" value="http://miloslavskiy.com/main/fail">
 			    <input type="hidden" name="expireDate" value="2013-11-30 22:55:00"> 
-			    <input type="text" name="userName" value="">
+			    <input type="hidden" name="userName" value="$username">
+			    <input type="hidden" name="user_email" value="$useremail">
 				<input type="submit" name="button" value="КУПИТЬ"  class="buy_button">
 			</form> 
 	</div>

@@ -41,6 +41,8 @@ class Main extends CI_Controller {
 
 		$data['records'] = $this->records->all_blogs();
 		$data['buy'] = $this->records->all_products();
+		$data['username']=$this->session->userdata('name');
+		$data['useremail']=$this->session->userdata('email');
 		$data['news'] = $this->news->get_three_last_news();
 		$data['trigger'] = ($name=='buy') ? 0 : 1;
 		$data['logged'] = $this->check_login();
