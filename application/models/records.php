@@ -48,4 +48,7 @@ class Records extends CI_Model {
         $this->db->set('send', $str)->insert('orders');
         return $this->db->insert_id();
     }
+    function writeLogLast($str, $id){
+        $this->db->where('id',$id)->set('received' , $str)->update('orders');
+    }
 }

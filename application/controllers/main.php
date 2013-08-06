@@ -526,7 +526,19 @@ class Main extends CI_Controller {
 			}
 
 
-
+		$str = json_encode(array(
+			'in_eshopId' => $in_eshopId,
+			'in_orderId' => $in_orderId,
+			'in_serviceName' => $in_serviceName,
+			'in_eshopAccount' => $in_eshopAccount,
+			'in_recipientAmount' => $in_recipientAmount,
+			'in_recipientCurrency' => $in_recipientCurrency,
+			'in_paymentStatus' => $in_paymentStatus,
+			'in_userName' => $in_userName,
+			'in_userEmail' => $in_userEmail,
+			'in_paymentData' => $in_paymentData,
+			'in_secretKey' => $in_secretKey
+		));
 		$f=@fopen("orders.txt","a+") or
           die("error");
 		fputs($f,	date("d:m:Y h:i:s").
@@ -550,7 +562,10 @@ class Main extends CI_Controller {
 			{
 			  echo "bad sign\n";
 			  exit();
-			}	
+			}
+		else {
+			$this->records->writeLogLast($str, $in_orderId);
+		}	
 				// Символический вывод подтверждающий успешность получения информации и совпадения подписей
 		echo "OK\n";
 	}
