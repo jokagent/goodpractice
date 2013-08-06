@@ -1,3 +1,4 @@
+
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
 
@@ -44,5 +45,8 @@ class Records extends CI_Model {
     function getNameBy($id){
         return $this->db->select('name')->where('id',$id)->get('users')->result_array();
     }
-
+    function writeLog($str){
+        $this->db->set('send', $str)->insert('orders');
+        return $this->db->insert_id();
+    }
 }

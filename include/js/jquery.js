@@ -123,5 +123,29 @@
                $('body').append('<div id="blackout"></div>');
                centerBox(true);
           });
+          $('.alertButton').click(function(){
+            alert('Чтобы приобрести продукт, войдите в систему!');
+          });
+      $(document).on('click','.buy_button:not(.alertButton)', function(e){
+        e.preventDefault();
+        var collected = {};
+        var form = $(this).parents('form');
+        form.find('input[type="hidden"]').each(function(){
+          collected[$(this).attr('name')] = $(this).val();
+        })
+        console.log(collected);
+        $.ajax({
+          type: 'POST',
+          url: '/main/writeLog',
+          data: {
+            json_string : JSON.stringify(collected)
+          },
+          success:function(data){
+            console.log(data);
+            form.find('input[name="orderId"]').val(parseInt(data));
+            form.trigger('submit');
+          }
+        });
+      });
     });
     
