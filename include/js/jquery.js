@@ -85,7 +85,16 @@
            }
           
       });
-
+      $('#enter #password').on('keydown keypressed keyup', function(e){
+        if(e.keyCode==13){
+          $('#enter_submit').trigger('click');
+        }
+      })
+      $('#enter #enter_email').on('keydown keypressed keyup', function(e){
+        if(e.keyCode==13){
+          $('#password').focus();
+        }
+      });
        $(document).on('click','#enter_submit',function(){
            // var data = {
            //     email :$('#log #enter_email').val(),
