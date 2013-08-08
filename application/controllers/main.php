@@ -504,9 +504,9 @@ class Main extends CI_Controller {
 		// нужен для проверки по HTTPS хотя в любом случае проверка )о
 		// 											//контрольной подписи предпочтительна, по этому просто игнорируем его.
 		$in_hash = strtoupper($this->input->post("hash"));
-		if (!$this->records->checkIfChanged($in_userField_1, $in_recipientAmount)){
+		if ($this->records->checkIfChanged($in_userField_1, $in_recipientAmount)){
 			echo "bad sign\n";
-			$this->records->writeLogLast($str, 'check_failed');
+			$this->records->writeLogLast('check_failed', $in_orderId);
 			exit();
 		}
 		$for_hash = $in_eshopId."::".
@@ -567,7 +567,7 @@ class Main extends CI_Controller {
 		if (!$checksum)
 			{
 			  echo "bad sign\n";
-			  $this->records->writeLogLast($str, 'check_failed');
+			  $this->records->writeLogLast('check_failed', $in_orderId);
 			  exit();
 			}
 		else {
@@ -598,6 +598,9 @@ class Main extends CI_Controller {
 	    );
 	    
 	    return str_replace($rus_alphabet, $rus_alphabet_translit, $text);
+	}
+	function testytest(){
+		var_dump($this->records->checkIfChanged(8, 12));
 	}
 	function writeLog(){
 		echo $this->records->writeLog($this->input->post('json_string'));

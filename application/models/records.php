@@ -53,10 +53,10 @@ class Records extends CI_Model {
     }
     function checkIfChanged($id, $price){
         $temp = $this->db->select('price')->where('id', $id)->get('buy')->result_array();
-        if ($temp){
-            if ($temp[0]['price'] == $price) {
-                return true;
-            } else return false;
-        } else return false;
+        if (!empty($temp)){
+            if ((double)$temp[0]['price'] == (double)$price) {
+                return false;
+            } else return true;
+        } else return true;
     }
 }
