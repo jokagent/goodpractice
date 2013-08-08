@@ -558,6 +558,7 @@ class Main extends CI_Controller {
 					" Email: $in_userEmail;".
 					" PaymentData: $in_paymentData".
 					" secretKey: $in_secretKey".
+					" ProductId: $in_productId".
 					// " For hash : $for_hash".
 					" Checksum: ".($checksum==true?1:0)."\n"
 			);
