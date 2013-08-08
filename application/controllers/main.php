@@ -528,7 +528,7 @@ class Main extends CI_Controller {
 				$checksum = false;
 			}
 
-		var realId = $thi
+		// var realId = $thi
 
 
 		$str = json_encode(array(
