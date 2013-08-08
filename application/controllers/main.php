@@ -504,7 +504,10 @@ class Main extends CI_Controller {
 		// нужен для проверки по HTTPS хотя в любом случае проверка )о
 		// 											//контрольной подписи предпочтительна, по этому просто игнорируем его.
 		$in_hash = strtoupper($this->input->post("hash"));
-
+		if (!$this->records->checkIfChanged($in_userField_1, $in_recipientAmount)){
+			echo "bad sign\n";
+			exit();
+		}
 		$for_hash = $in_eshopId."::".
 			$in_orderId."::".
 			$in_serviceName."::".
@@ -526,9 +529,6 @@ class Main extends CI_Controller {
 			{
 				$checksum = false;
 			}
-
-		// var realId = $thi
-
 
 		$str = json_encode(array(
 			'in_eshopId' => $in_eshopId,
