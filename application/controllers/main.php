@@ -500,7 +500,7 @@ class Main extends CI_Controller {
 		$in_userEmail = $this->input->post("userEmail");
 		$in_paymentData = $this->input->post("paymentData");
 		$in_secretKey = $this->input->post("secretKey");		
-		$in_productId = $this->input->post("productId");
+		$in_userField_1 = $this->input->post("userField_1");
 		// нужен для проверки по HTTPS хотя в любом случае проверка )о
 		// 											//контрольной подписи предпочтительна, по этому просто игнорируем его.
 		$in_hash = strtoupper($this->input->post("hash"));
@@ -557,7 +557,7 @@ class Main extends CI_Controller {
 					" Email: $in_userEmail;".
 					" PaymentData: $in_paymentData".
 					" secretKey: $in_secretKey".
-					" ProductId: $in_productId".
+					" ProductId: $in_userField_1".
 					// " For hash : $for_hash".
 					" Checksum: ".($checksum==true?1:0)."\n"
 			);

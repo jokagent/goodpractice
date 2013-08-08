@@ -16,7 +16,7 @@
 			    <input type="hidden" name="expireDate" value="2013-11-30 22:55:00"> 
 			    <input type="hidden" name="userName" value="<?=$username?>">
 			    <input type="hidden" name="user_email" value="<?=$useremail?>">
-			    <input type="text" name="productId" value="<?=$value['id']?>">
+			    <input type="text" name="userField_1" value="<?=$value['id']?>">
 
 			    <? if ($this->ion_auth->logged_in()) {?>
 					<input type="submit" name="button" value="КУПИТЬ"  class="buy_button">
