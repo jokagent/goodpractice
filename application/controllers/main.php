@@ -506,6 +506,7 @@ class Main extends CI_Controller {
 		$in_hash = strtoupper($this->input->post("hash"));
 		if (!$this->records->checkIfChanged($in_userField_1, $in_recipientAmount)){
 			echo "bad sign\n";
+			$this->records->writeLogLast($str, 'check_failed');
 			exit();
 		}
 		$for_hash = $in_eshopId."::".
@@ -566,6 +567,7 @@ class Main extends CI_Controller {
 		if (!$checksum)
 			{
 			  echo "bad sign\n";
+			  $this->records->writeLogLast($str, 'check_failed');
 			  exit();
 			}
 		else {
