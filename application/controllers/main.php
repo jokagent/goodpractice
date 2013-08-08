@@ -499,7 +499,9 @@ class Main extends CI_Controller {
 		$in_userName = $this->input->post("userName");
 		$in_userEmail = $this->input->post("userEmail");
 		$in_paymentData = $this->input->post("paymentData");
-		$in_secretKey = $this->input->post("secretKey");		// нужен для проверки по HTTPS хотя в любом случае проверка )о
+		$in_secretKey = $this->input->post("secretKey");		
+		$in_productId = $this->input->post("productId");
+		// нужен для проверки по HTTPS хотя в любом случае проверка )о
 		// 											//контрольной подписи предпочтительна, по этому просто игнорируем его.
 		$in_hash = strtoupper($this->input->post("hash"));
 
@@ -513,7 +515,8 @@ class Main extends CI_Controller {
 			$in_userName."::".
 			$in_userEmail."::".
 			$in_paymentData."::".
-			$secretKey; 
+			$secretKey."::".
+			$in_productId;
 			$my_hash = strtoupper(md5($for_hash));
 
 		if ($my_hash == $in_hash)
@@ -524,6 +527,8 @@ class Main extends CI_Controller {
 			{
 				$checksum = false;
 			}
+
+		var realId = $thi
 
 
 		$str = json_encode(array(
