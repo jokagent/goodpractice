@@ -1,7 +1,9 @@
 <div id="footer_menu">
                  <div id="social_like2">
-                        <div id="social_like_title">Нажмите на "социальную кнопку", чтобы поделиться с друзьями!</div>
-                       <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmiloslavskiy.com&amp;width=450&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;send=false&amp;appId=384403321677819" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+                    
+                    <div id="social_like_title">Нажмите на "социальную кнопку", чтобы поделиться с друзьями!</div>
+                    <div class="socLikeWrapper">
+                       <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmiloslavskiy.com&amp;width=450&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;send=false&amp;appId=384403321677819" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:20px;" allowTransparency="true"></iframe>
                         <!--vk-->
                         <div class="social_like_div">
                         <div id="vk_like2"></div>
@@ -17,6 +19,7 @@
                          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                         </div>
                         <!--tweet-->
+                    </div>
                     </div>
                 <div id="bottom_menu">
                       <div class="menu_button popup_reg" id="red_button"><a href="/main/site/buy">КУПИТЬ</a>

@@ -395,6 +395,7 @@ h2 {
     color:#22224E;
     font-size: 14px;
     margin-bottom: 15px;
+    margin-left: 5px;
     
 }
 
@@ -528,14 +529,14 @@ h2 {
 #social_like2 {
     height: 50px;
     
-    padding:20px;
+    padding:20px 25px;
     border:1px solid #cdcdcd;
     margin: 0 0 35px 0;
     position: absolute;
     bottom: 30px;
     /*width:450px;*/
     left:215px;
-    width:458px;
+    /*width:458px;*/
 
 }
 /*.posts {
@@ -672,7 +673,7 @@ h2 {
   cursor:pointer;
   color:white;
   font-weight: bold;
-  margin: 30px;
+  margin: 20px 20px 5px 0;
   display: inline-block;
 }
 
@@ -896,6 +897,7 @@ h2 {
 .buy_entry {
   border: 1px solid #CcCCCc;
   margin: 10px 0;
+  padding: 15px;
 
 }
 .buy_entry a {
@@ -921,4 +923,16 @@ input {
 
 .footer_copyright {
   margin-left: 15px;
+}
+
+.socLikeWrapper {
+  margin: 0 auto;
+    padding: 0 0 0 20px;
+
+}
+
+.buy_entry_title {
+  font-size: 20px;
+  margin: 10px 0;
+  display: block;
 }

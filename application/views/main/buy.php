@@ -3,7 +3,7 @@
 	
 		
 	foreach ($buy as $key => $value) {?>
-			<div class='buy_entry' id="entry_<?=$value['id']?>"><a href="<?=$URL.$value['id']?>"><span><?=$value['title']?></span></a><div class='buy_entry_content'><?=$value['text']?></div>
+			<div class='buy_entry' id="entry_<?=$value['id']?>"><a href="<?=$URL.$value['id']?>"><span class="buy_entry_title"><?=$value['title']?></span></a><div class='buy_entry_content'><?=$value['text']?></div>
 			<div>
 			<form action='https://merchant.intellectmoney.ru/ru/' name='pay' method='POST'>
 				<input type="hidden" name="eshopId" value="451343">
@@ -16,7 +16,7 @@
 			    <input type="hidden" name="expireDate" value="2013-11-30 22:55:00"> 
 			    <input type="hidden" name="userName" value="<?=$username?>">
 			    <input type="hidden" name="user_email" value="<?=$useremail?>">
-			    <input type="text" name="userField_1" value="<?=$value['id']?>">
+			    <input type="hidden" name="userField_1" value="<?=$value['id']?>">
 
 			    <? if ($this->ion_auth->logged_in()) {?>
 					<input type="submit" name="button" value="КУПИТЬ"  class="buy_button">
