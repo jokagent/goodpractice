@@ -6,6 +6,7 @@
 			<div class='buy_entry' id="entry_<?=$value['id']?>"><a href="<?=$URL.$value['id']?>"><span class="buy_entry_title"><?=$value['title']?></span></a><div class='buy_entry_content'><?=$value['text']?></div>
 			<div>
 			<form action='https://merchant.intellectmoney.ru/ru/' name='pay' method='POST'>
+				<? if (isset($username)){?>
 				<input type="hidden" name="eshopId" value="451343">
 				<input type="hidden" name="orderId" value=""> 
 				<input type="hidden" name="serviceName" value="<?=$value['serviceName']?>"> 
@@ -17,7 +18,8 @@
 			    <input type="hidden" name="userName" value="<?=$username?>">
 			    <input type="hidden" name="user_email" value="<?=$useremail?>">
 			    <input type="hidden" name="userField_1" value="<?=$value['id']?>">
-
+			    <?}?>
+			    <?if (!isset($isEdit)){?>
 			    <? if ($this->ion_auth->logged_in()) {?>
 					<input type="submit" name="button" value="КУПИТЬ"  class="buy_button">
 				<?}
@@ -25,7 +27,9 @@
 					{?>	<input type="button" name="alertbutton" value="КУПИТЬ" class="buy_button alertButton">
 
 				<?}?>
+				<?}?>
 			</form> 
+			
 			</div>
 	</div>
 	<?}

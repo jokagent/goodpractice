@@ -31,7 +31,23 @@
                            <div id="countdown_button">Я хочу узнать!</div>
                         </div>
                         
-                        <div id="countimg"><!-- <img src="wp-content/themes/goodprac/images/count.png"> --></div>
+                        <div id="countdownBlock">
+                            <div id="countdown_text">До конца акции с 30% скидкой осталось</div>
+                            <div id="rezult"></div>
+                            <script>
+                                function countdown(){
+                                    var today = new Date().getTime();
+                                    var end = new Date(2013,7,19).getTime();
+                                    var dateX = new Date(end-today);
+                                    var perDays = 60*60*1000*24;
+                                    date_to_write = '<div class="timeBlock"><div id="d" class="timeEm">' + (Math.round(dateX/perDays) + '&nbsp</div><div>дней</div></div><div class="timeBlock"><div id="h" class="timeEm">' + dateX.getUTCHours().toString() + '&nbsp</div><div>часов</div></div><div class="timeBlock"><div id="m" class="timeEm">' + dateX.getMinutes().toString() + '&nbsp</div><div>минут</div></div><div class="timeBlock"><div id="s" class="timeEm">' + dateX.getSeconds().toString() + '&nbsp</div><div>секунд</div></div>');
+                                    var result = document.getElementById('rezult');
+                                    result.innerHTML = date_to_write;
+                                    }
+                                    countdown();
+                                    setInterval(countdown, 1000);
+                            </script>
+                        </div>
                     </div>
                     <div id="vk">
                         
@@ -47,7 +63,13 @@
                     <div id="facebook">
                       <div class="fb-like-box" data-href="https://www.facebook.com/goodpract" data-width="260" data-height="420" data-show-faces="true" data-stream="false" data-show-border="true" data-header="false"></div>
                        </div>
-                    </div>
+
+
+                    
+                    
+                
+
+               </div>
 
 
                 
